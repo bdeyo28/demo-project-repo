@@ -10,16 +10,12 @@ import { IntensityService } from '../intensity.service';
 export class IntensityComponent implements OnInit {
 
 
-  intensity : Intensity;
-  intensityList : Intensity[];
+  @Input()intensity : Intensity;
 
-  constructor(private intensityService : IntensityService) { }
+  constructor() { }
 
   ngOnInit(): void {
 
-    this.intensityService.getIntensity().subscribe(intensity => {this.intensity = intensity});
-
-    this.intensityService.getIntensityList().subscribe(list => {this.intensityList = list});
 
   }
 

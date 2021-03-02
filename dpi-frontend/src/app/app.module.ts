@@ -11,6 +11,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ContactpageComponent } from './contactpage/contactpage.component';
 import { ContactService } from './contact.service';
+import { IntensitylistComponent } from './intensity/intensitylist/intensitylist.component';
+import { ExerciselistComponent } from './exercise/exerciselist/exerciselist.component';
 
 @NgModule({
   declarations: [
@@ -19,14 +21,16 @@ import { ContactService } from './contact.service';
     IntensityComponent,
     ExerciseComponent,
     HomepageComponent,
-    ContactpageComponent
+    ContactpageComponent,
+    IntensitylistComponent,
+    ExerciselistComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [
     ContactService

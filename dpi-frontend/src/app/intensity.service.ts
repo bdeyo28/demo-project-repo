@@ -17,12 +17,26 @@ export class IntensityService {
 
   constructor(private http : HttpClient) { }
 
-  getIntensity() : Observable<Intensity> {
-    return this.http.get<Intensity>(this.baseURL + "/intensity/1");
+  getIntensity(id : number) : Observable<Intensity> {
+    return this.http.get<Intensity>(this.baseURL + "/intensity/" + id)
+    .pipe(
+      tap(x => console.log(x)),
+      catchError(err => {
+        console.log(err);
+        return of(null);
+      })
+    );
   }
 
   getIntensityList() : Observable<Intensity[]> {
-    return this.http.get<Intensity[]>(this.baseURL + "/list");
+    return this.http.get<Intensity[]>(this.baseURL + "/list")
+    .pipe(
+      tap(x => console.log(x)),
+      catchError(err => {
+        console.log(err);
+        return of(null);
+      })
+    );
   }
-
+  
 }

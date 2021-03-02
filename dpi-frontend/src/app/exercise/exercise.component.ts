@@ -9,17 +9,12 @@ import { ExerciseService } from '../exercise.service';
 })
 export class ExerciseComponent implements OnInit {
 
-  exerciseList : Exercise[];
-  isCompleted : boolean;
+  @Input()exercise : Exercise;
 
-  constructor(private exerciseService : ExerciseService) { }
+  constructor() { }
 
   ngOnInit(): void {
 
-
-    this.exerciseService.getExerciseList().subscribe(list => {this.exerciseList = list});
-
-    this.exerciseService.getIsCompleted().subscribe(completed => {this.isCompleted = completed});
   }
 
 }

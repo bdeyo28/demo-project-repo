@@ -11,6 +11,13 @@
     border: 1px solid #563d7c;
   }
 
+#header {
+  margin: auto;
+  margin-left: 42.5%;
+  height: 50%;
+  width: 100%;
+}
+
 .fa-address-card {
   color: white;
   font-size: 250px;
@@ -416,7 +423,7 @@ body {
     align-items: center;
     flex-wrap: wrap;
     min-height: 100vh;
-    background-image: url("src/assets/gymbackground2.jpeg");
+    background-image: url("/assets/gymbackground2.jpeg");
     background-size: cover;
 }
 
