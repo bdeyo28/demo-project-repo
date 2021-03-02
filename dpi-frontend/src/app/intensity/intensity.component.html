@@ -10,7 +10,7 @@
                     <h3>{{intensity.intensityName}} Workout</h3>
                     <p>{{intensity.intensityDescription}}</p>
                     <p>Time: {{intensity.intensityDuration}}</p>
-                    <a href="http://localhost:4200/workouts/{{intensity.intensityID}}" class="select1">Select</a>
+                    <a [routerLink] = "['/workouts/', intensity.intensityID]" class="select1">Select</a>
                 </div>
             </div>
         </div>

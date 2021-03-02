@@ -12,15 +12,12 @@ import { WorkoutService } from '../workout.service';
 export class WorkoutComponent implements OnInit {
 
   @Input()workout : Workout;
-  workoutID : number;
 
-  constructor(private workoutService : WorkoutService) { 
+  constructor() { 
 
   }
 
   ngOnInit(): void {
-
-    this.workoutService.getWorkout(this.workoutID).subscribe(workout => {this.workout = workout});
 
   }
 

@@ -7,12 +7,13 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { ContactpageComponent } from './contactpage/contactpage.component';
 import { IntensitylistComponent} from './intensity/intensitylist/intensitylist.component';
 import { ExerciselistComponent} from './exercise/exerciselist/exerciselist.component';
+import { WorkoutlistComponent } from './workout/workoutlist/workoutlist.component';
 
 const routes: Routes = [{path: "", component : HomepageComponent},
                         {path: "contact", component : ContactpageComponent},
-                        {path: "workout", component: WorkoutComponent},
-                        {path: "exercise", component: ExerciselistComponent},
-                        {path: "intensity", component: IntensitylistComponent}];
+                        {path: "workouts/:intensityID", component: WorkoutlistComponent},
+                        {path: "exercises/:workoutID", component: ExerciselistComponent},
+                        {path: "intensitys", component: IntensitylistComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

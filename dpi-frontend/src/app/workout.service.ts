@@ -4,6 +4,7 @@ import {tap, catchError} from 'rxjs/operators';
 import {of} from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Workout } from './Workout';
+import { ActivatedRoute } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -14,19 +15,19 @@ export class WorkoutService {
 
   httpOptions = {headers: new HttpHeaders({"Content-Type" : "application/json"})};
 
-  constructor(private http : HttpClient) {
+  constructor(private http : HttpClient, private router : ActivatedRoute) {
    }
 
-   getWorkout(id : number) : Observable<Workout> {
-    return this.http.get<Workout>(this.baseURL + "/workout/" + id) // pass in id 
-    .pipe(
-      tap(x => console.log(x)),
-      catchError(err => {
-        console.log(err);
-        return of(null);
-      })
-    );
-  };
+  //  getWorkout() : Observable<Workout> {
+  //   return this.http.get<Workout>(this.baseURL + "/workout/3") // pass in id 
+  //   .pipe(
+  //     tap(x => console.log(x)),
+  //     catchError(err => {
+  //       console.log(err);
+  //       return of(null);
+  //     })
+  //   );
+  // };
 
   getWorkoutList(id : number) : Observable<Workout[]> {
     return this.http.get<Workout[]>(this.baseURL + "/workouts/" + id)

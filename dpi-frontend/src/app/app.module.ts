@@ -13,6 +13,7 @@ import { ContactpageComponent } from './contactpage/contactpage.component';
 import { ContactService } from './contact.service';
 import { IntensitylistComponent } from './intensity/intensitylist/intensitylist.component';
 import { ExerciselistComponent } from './exercise/exerciselist/exerciselist.component';
+import { WorkoutlistComponent } from './workout/workoutlist/workoutlist.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ExerciselistComponent } from './exercise/exerciselist/exerciselist.comp
     HomepageComponent,
     ContactpageComponent,
     IntensitylistComponent,
-    ExerciselistComponent
+    ExerciselistComponent,
+    WorkoutlistComponent
   ],
   imports: [
     BrowserModule,
