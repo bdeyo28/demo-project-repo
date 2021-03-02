@@ -1,0 +1,457 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+/*--Customize buttons with new color and hover attribute--*/
+.btn-primary {
+    background-color: #6648b1;
+    border: 1px solid #6648b1;
+  }
+ 
+  .btn-primary:hover {
+    background-color: #563d7c;
+    border: 1px solid #563d7c;
+  }
+
+.fa-address-card {
+  color: white;
+  font-size: 250px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 40px 0;
+}
+
+.container .card {
+    position: relative;
+    min-width: 380px;
+    height: 490px;
+    box-shadow: inset 5px 5px 5px rgba(0,0,0,0.2),
+                inset -5px -5px 15px rgba(255,255,255,0.1),
+                5px 5px 15px rgba(0,0,0,0.3),
+                -5px -5px 15px rgba(255,255,255,0.1);
+    border-radius: 15px;
+    margin: 10px;
+}
+
+/*
+
+.container .card .box1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: rgba(255,255,255,0.1);
+    pointer-events: none;
+}
+
+.container .card .box2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: rgba(255,255,255,0.1);
+    pointer-events: none;
+}
+
+.container .card .box3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: rgba(255,255,255,0.1);
+    pointer-events: none;
+}
+
+*/
+
+.container .card .box1 {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    background: radial-gradient(circle at right bottom, lightgray , black);
+    background-position: center right;
+    -moz-opacity: .9;
+    -khtml-opacity: .9;
+    opacity: .9;
+    border: 2px solid #1e1f23;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/*
+.container .card .box1 span:nth-child(1) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, black, darkslategray);
+    animation: animate1 10s linear infinite;
+}
+
+.container .card .box1 span:nth-child(2) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, black, darkslategray);
+    animation: animate2 10s linear infinite;
+  }
+
+.container .card .box1 span:nth-child(3) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to left, black, darkslategray);
+    animation: animate3 10s linear infinite;
+  }
+
+.container .card .box1 span:nth-child(4) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to top, black, darkslategray);
+    animation: animate4 10s linear infinite;
+  }
+*/
+
+.container .card .box2 {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    background: radial-gradient(circle at right bottom, lightgray , black);
+    -moz-opacity: .9;
+    -khtml-opacity: .9;
+    opacity: .9;
+    border: 2px solid #1e1f23;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/*
+.container .card .box2 span:nth-child(1) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, darkred, brown);
+    animation: animate1 10s linear infinite;
+}
+
+.container .card .box2 span:nth-child(2) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, darkred, brown);
+    animation: animate2 10s linear infinite;
+  }
+
+.container .card .box2 span:nth-child(3) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to left, darkred, brown);
+    animation: animate3 10s linear infinite;
+  }
+
+.container .card .box2 span:nth-child(4) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to top, darkred, brown);
+    animation: animate4 10s linear infinite;
+  }
+*/
+
+/*
+.container .card .box3 span:nth-child(1) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, darkslategray, dimgray);
+    animation: animate1 10s linear infinite;
+}
+
+.container .card .box3 span:nth-child(2) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, darkslategray, dimgray);
+    animation: animate2 10s linear infinite;
+  }
+
+.container .card .box3 span:nth-child(3) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to left, darkslategray, dimgray);
+    animation: animate3 10s linear infinite;
+  }
+
+.container .card .box3 span:nth-child(4) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to top, darkslategray, dimgray);
+    animation: animate4 10s linear infinite;
+  }
+*/
+
+.container .card .box1:hover {
+    transform: translateY(-50px);
+    box-shadow: 0 40px 70px rgba(0,0,0,0.5);
+}
+
+.container .card .box1 .content {
+    padding: 20px;
+    text-align: center;
+}
+
+.container .card .box2:hover {
+    transform: translateY(-50px);
+    box-shadow: 0 40px 70px rgba(0,0,0,0.5);
+}
+
+.container .card .box2 .content {
+    padding: 20px;
+    text-align: center;
+}
+
+.container .card .box3:hover {
+    transform: translateY(-50px);
+    box-shadow: 0 40px 70px rgba(0,0,0,0.5);
+}
+
+.container .card .box3 .content {
+    padding: 20px;
+    text-align: center;
+}
+
+.container .card .box1 .content h2 {
+    position: absolute;
+    top: -10px;
+    right: 30px;
+    font-size: 8em;
+    color: rgba(255,255,255,0.05);
+}
+
+.container .card .box1 .content h3 {
+    font-size: 1.8em;
+    color: whitesmoke;
+    -moz-opacity: .8;
+    -khtml-opacity: .8;
+    opacity: .8;
+    transition: 0.5s;
+    z-index: 1;
+}
+
+.container .card .box2 .content h2 {
+    position: absolute;
+    top: -10px;
+    right: 30px;
+    font-size: 8em;
+    color: rgba(255,255,255,0.05);
+}
+
+.container .card .box2 .content h3 {
+    font-size: 1.8em;
+    color: whitesmoke;
+    -moz-opacity: .8;
+    -khtml-opacity: .8;
+    opacity: .8;
+    z-index: 1;
+    transition: 0.5s;
+}
+
+.container .card .box3 .content h2 {
+    position: absolute;
+    top: -10px;
+    right: 30px;
+    font-size: 8em;
+    color: rgba(255,255,255,0.05);
+}
+
+.container .card .box3 .content h3 {
+    font-size: 1.8em;
+    color: black;
+    -moz-opacity: .8;
+    -khtml-opacity: .8;
+    opacity: .8;
+    z-index: 1;
+    transition: 0.5s;
+}
+
+.container .card .box1 .content p {
+    padding: 20px;
+    text-align: center;
+}
+
+.container .card .box1 .content a {
+    position: relative;
+    display: inline-block;
+    padding: 8px 20px;
+    background: #000;
+    margin-top: 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 400;
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.container .card .box2 .content p {
+    padding: 20px;
+    text-align: center;
+}
+
+.container .card .box2 .content a {
+    position: relative;
+    display: inline-block;
+    padding: 8px 20px;
+    background: #000;
+    margin-top: 50px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 400;
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.container .card .box3 .content p {
+    padding: 20px;
+    text-align: center;
+}
+
+.container .card .box3 .content a {
+    position: relative;
+    display: inline-block;
+    padding: 8px 20px;
+    background: #000;
+    margin-top: 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 400;
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+
+.container .card .box1 .content a.select1 {
+    background: darkslategray;
+}
+
+.container .card .box2 .content a.select2 {
+    background: darkslategray;
+ }
+
+ .container .card .box3 .content a.select3 {
+    background: teal;
+ }
+
+/*--Customize navbar at top to look appropriately portioned across screen--*/
+.navbar {
+    padding: 1rem;
+  }
+ 
+  .navbar-nav li {
+    padding-right: 20px;
+  }
+ 
+  .nav-link {
+    font-size: 1.1em !important;
+  }
+ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}  
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    background-image: url("src/assets/gymbackground2.jpeg");
+    background-size: cover;
+}
+
+@keyframes animate1 {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+@keyframes animate2 {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+}
+
+@keyframes animate3 {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+}
+
+@keyframes animate4 {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+}
