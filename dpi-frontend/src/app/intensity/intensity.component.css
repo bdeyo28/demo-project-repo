@@ -94,6 +94,47 @@
     overflow: hidden;
 }
 
+.container .card .box1 span:nth-child(1) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, lightgray, darkslategray);
+  animation: animate1 10s linear infinite;
+}
+
+.container .card .box1 span:nth-child(2) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, lightgray, darkslategray);
+  animation: animate2 10s linear infinite;
+}
+
+.container .card .box1 span:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to left, lightgray, darkslategray);
+  animation: animate3 10s linear infinite;
+}
+
+.container .card .box1 span:nth-child(4) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to top, lightgray, darkslategray);
+  animation: animate4 10s linear infinite;
+}
+
+
 /*
 .container .card .box1 span:nth-child(1) {
     position: absolute;
