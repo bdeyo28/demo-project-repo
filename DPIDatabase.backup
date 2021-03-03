@@ -1,0 +1,94 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 13.1
+-- Dumped by pg_dump version 13.1
+
+-- Started on 2021-03-03 15:47:53 EST
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- TOC entry 3278 (class 0 OID 17235)
+-- Dependencies: 205
+-- Data for Name: Exercise; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY "public"."Exercise" ("workoutID", "exerciseID", "name", "description", "bodyweight", "weight", "reps", "completed", "sets") FROM stdin;
+3	1	Pull-Ups	Description	t	\N	Till Failure	f	3
+3	2	Lat Pulldowns	Description	f	\N	10-12	f	4
+3	3	Military Press	Description	f	\N	12-16	f	3
+3	4	Incline Dumbbell Bench Press	Description	f	\N	8-10	f	3
+\.
+
+
+--
+-- TOC entry 3274 (class 0 OID 17153)
+-- Dependencies: 201
+-- Data for Name: Intensity; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY "public"."Intensity" ("intensityID", "name", "time", "description") FROM stdin;
+1	Light	20 Minutes	Quick workout focused on maximizing heart and metabolic rates to burn fat for that day. It \n\t\tis recommended to do this workout in the morning.
+2	Moderate	40 Minutes	Average length workout focused on \n\t\tbuilding foundational strength and burning fat.
+3	Heavy	60 Minutes	For the hard workers, intense workout that\n\t\tprioritizes hypertrophy while maximizing muscle and strength progression.
+\.
+
+
+--
+-- TOC entry 3276 (class 0 OID 17203)
+-- Dependencies: 203
+-- Data for Name: Workout; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY "public"."Workout" ("workoutID", "intensityID", "name", "description", "completed") FROM stdin;
+2	1	Bodyweight HIIT Workout	Quick 20 minute AMRAP (as many rounds as possible) high intensity interval training.	f
+3	2	Upper Body	Moderate upper body workout focusing on foundational movements such as military press, russian deadlifts, and lat pulldowns	f
+4	3	Full Lower Body	Intense 60 minute workout maximizes muscle growth in the hamstrings, glutes, and quads while allowing optimal rest periods.	f
+5	2	Lower Body	Description...	f
+\.
+
+
+--
+-- TOC entry 3287 (class 0 OID 0)
+-- Dependencies: 204
+-- Name: Exercise_exerciseID_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('"public"."Exercise_exerciseID_seq"', 4, true);
+
+
+--
+-- TOC entry 3288 (class 0 OID 0)
+-- Dependencies: 200
+-- Name: Intensity_intensityID_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('"public"."Intensity_intensityID_seq"', 3, true);
+
+
+--
+-- TOC entry 3289 (class 0 OID 0)
+-- Dependencies: 202
+-- Name: Workout_workoutID_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('"public"."Workout_workoutID_seq"', 5, true);
+
+
+-- Completed on 2021-03-03 15:47:53 EST
+
+--
+-- PostgreSQL database dump complete
+--
+

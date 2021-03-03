@@ -22,7 +22,7 @@ export class ExerciselistComponent implements OnInit {
     let idName : string = this.router.snapshot.paramMap.get("workoutID");
     this.workoutID = parseInt(idName);
 
-    this.service.getExerciseList().subscribe(list => {this.exerciseList = list});
+    this.service.getExerciseList(this.workoutID).subscribe(list => {this.exerciseList = list});
 
   }
 
