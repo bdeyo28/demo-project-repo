@@ -1,38 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
 
-/*--Customize buttons with new color and hover attribute--*/
-.btn-primary {
-    background-color: #6648b1;
-    border: 1px solid #6648b1;
-  }
- 
-  .btn-primary:hover {
-    background-color: #563d7c;
-    border: 1px solid #563d7c;
-  }
-
 #header {
   margin: auto;
   text-align: center;
-  height: 50%;
-  width: 100%;
+  height: 100%;
+  width: 30%;
   border-radius: 50%;
-  border: 5px solid whitesmoke;
-  background-color: rgba(0, 0, 0, 0.8);
-  opacity: .9;
+  border: 5px solid darkgray;
+  background: rgba(0,0,0,0.6);
   margin-top: 50px;
   margin-left: 400px;
   margin-right: 400px;
 }
 
-#header .img {
-  margin: auto;
-  text-align: center;
-}
+#headerimg {
+  position: relative;
 
-.fa-address-card {
-  color: white;
-  font-size: 250px;
 }
 
 .container {
@@ -57,9 +40,7 @@
     margin: 10px;
 }
 
-/*
-
-.container .card .box1::before {
+/* .container .card .box1::before {
     content: '';
     position: absolute;
     top: 0;
@@ -79,20 +60,7 @@
     height: 100%;
     background: rgba(255,255,255,0.1);
     pointer-events: none;
-}
-
-.container .card .box3::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100%;
-    background: rgba(255,255,255,0.1);
-    pointer-events: none;
-}
-
-*/
+} */
 
 .container .card .box1 {
     position: absolute;
@@ -114,14 +82,14 @@
     overflow: hidden;
 }
 
-/*
+
 .container .card .box1 span:nth-child(1) {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(to right, black, darkslategray);
+    background: linear-gradient(to right, lightgray, darkslategray);
     animation: animate1 10s linear infinite;
 }
 
@@ -131,7 +99,7 @@
     right: 0;
     width: 2px;
     height: 100%;
-    background: linear-gradient(to bottom, black, darkslategray);
+    background: linear-gradient(to bottom, lightgray, darkslategray);
     animation: animate2 10s linear infinite;
   }
 
@@ -141,7 +109,7 @@
     left: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(to left, black, darkslategray);
+    background: linear-gradient(to left, lightgray, darkslategray);
     animation: animate3 10s linear infinite;
   }
 
@@ -151,10 +119,10 @@
     left: 0;
     width: 2px;
     height: 100%;
-    background: linear-gradient(to top, black, darkslategray);
+    background: linear-gradient(to top, lightgray, darkslategray);
     animation: animate4 10s linear infinite;
   }
-*/
+
 
 .container .card .box2 {
     position: absolute;
@@ -175,89 +143,45 @@
     overflow: hidden;
 }
 
-/*
 .container .card .box2 span:nth-child(1) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(to right, darkred, brown);
-    animation: animate1 10s linear infinite;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, lightgray, darkslategray);
+  animation: animate1 10s linear infinite;
 }
 
 .container .card .box2 span:nth-child(2) {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(to bottom, darkred, brown);
-    animation: animate2 10s linear infinite;
-  }
-
-.container .card .box2 span:nth-child(3) {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(to left, darkred, brown);
-    animation: animate3 10s linear infinite;
-  }
-
-.container .card .box2 span:nth-child(4) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(to top, darkred, brown);
-    animation: animate4 10s linear infinite;
-  }
-*/
-
-/*
-.container .card .box3 span:nth-child(1) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(to right, darkslategray, dimgray);
-    animation: animate1 10s linear infinite;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, lightgray, darkslategray);
+  animation: animate2 10s linear infinite;
 }
 
-.container .card .box3 span:nth-child(2) {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(to bottom, darkslategray, dimgray);
-    animation: animate2 10s linear infinite;
-  }
+.container .card .box2 span:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to left, lightgray, darkslategray);
+  animation: animate3 10s linear infinite;
+}
 
-.container .card .box3 span:nth-child(3) {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(to left, darkslategray, dimgray);
-    animation: animate3 10s linear infinite;
-  }
-
-.container .card .box3 span:nth-child(4) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(to top, darkslategray, dimgray);
-    animation: animate4 10s linear infinite;
-  }
-*/
+.container .card .box2 span:nth-child(4) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to top, lightgray, darkslategray);
+  animation: animate4 10s linear infinite;
+}
 
 .container .card .box1:hover {
     transform: translateY(-50px);

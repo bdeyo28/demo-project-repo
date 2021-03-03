@@ -1,1 +1,16 @@
-<p>{{exercise.exerciseName}}<br/>{{exercise.exerciseID}}<br/>{{exercise.bodyweight}}</p>
+
+    <div class="container">
+        <div class="card">
+            <div class="box1">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <div class="content">
+                    <h3>{{exercise.exerciseName}}</h3>
+                    <p>{{exercise.exerciseDesc}}</p>
+                    <a [routerLink] = "['/workouts/', exercise.exerciseID]" class="select1">View Details</a>
+                </div>
+            </div>
+        </div>
+    </div>

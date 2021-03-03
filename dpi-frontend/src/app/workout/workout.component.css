@@ -80,7 +80,7 @@
     left: 20px;
     right: 20px;
     bottom: 20px;
-    background: radial-gradient(circle at right bottom, lightgray , black);
+    background: linear-gradient(to right bottom, gray, black, darkslategray, black, gray);
     background-position: center right;
     -moz-opacity: .9;
     -khtml-opacity: .9;

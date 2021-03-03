@@ -14,6 +14,8 @@ import { ContactService } from './contact.service';
 import { IntensitylistComponent } from './intensity/intensitylist/intensitylist.component';
 import { ExerciselistComponent } from './exercise/exerciselist/exerciselist.component';
 import { WorkoutlistComponent } from './workout/workoutlist/workoutlist.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { CarouselComponent } from './homepage/carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -25,14 +27,16 @@ import { WorkoutlistComponent } from './workout/workoutlist/workoutlist.componen
     ContactpageComponent,
     IntensitylistComponent,
     ExerciselistComponent,
-    WorkoutlistComponent
+    WorkoutlistComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [
     ContactService

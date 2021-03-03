@@ -1,6 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, NgModule } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators, NgForm } from '@angular/forms';
 import { ContactService } from 'src/app/contact.service';
+import { FormsModule } from '@angular/forms';
+import { Contact } from '../Contact';
+import { Observable } from 'rxjs';
+import { HttpClientModule, HttpClient, HttpHeaders } from "@angular/common/http"
 
 @Component({
   selector: 'app-contactpage',
@@ -8,27 +12,23 @@ import { ContactService } from 'src/app/contact.service';
   styleUrls: ['./contactpage.component.css']
 })
 export class ContactpageComponent implements OnInit {
-  FormData: FormGroup;
-  constructor(private builder: FormBuilder, private contact: ContactService) { }
+
+  name : string;
+  email : string;
+  message : string;
+
+  httpOptions = {headers: new HttpHeaders({"Content-Type" : "application/json"})};
+
+  constructor(private http : HttpClient) { }
+
 
   ngOnInit() {
-    this.FormData = this.builder.group({
-      Fullname: new FormControl('', [Validators.required]),
-      Email: new FormControl('', [Validators.compose([Validators.required, Validators.email])]),
-      Comment: new FormControl('', [Validators.required])
-    });
+
   }
 
-
-  onSubmit(FormData) {
-    console.log(FormData)
-    this.contact.PostMessage(FormData)
-      .subscribe(response => {
-        location.href = 'https://mailthis.to/confirm'
-        console.log(response)
-      }, error => {
-        console.warn(error.responseText)
-        console.log({ error })
-      })
+  submitForm(contact : Contact) {
+    this.http.post<Contact>('https://mailthis.to/bdeyo28', contact)
+          .subscribe(status => console.log(JSON.stringify(status)));
   }
+  
 }
