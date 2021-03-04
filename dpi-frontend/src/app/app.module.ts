@@ -16,6 +16,7 @@ import { ExerciselistComponent } from './exercise/exerciselist/exerciselist.comp
 import { WorkoutlistComponent } from './workout/workoutlist/workoutlist.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CarouselComponent } from './homepage/carousel/carousel.component';
+import { ExercisedetailsComponent } from './exercise/exercisedetails/exercisedetails.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CarouselComponent } from './homepage/carousel/carousel.component';
     IntensitylistComponent,
     ExerciselistComponent,
     WorkoutlistComponent,
-    CarouselComponent
+    CarouselComponent,
+    ExercisedetailsComponent
   ],
   imports: [
     BrowserModule,
