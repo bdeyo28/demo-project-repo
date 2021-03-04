@@ -5,7 +5,7 @@
 -- Dumped from database version 13.1
 -- Dumped by pg_dump version 13.1
 
--- Started on 2021-03-03 15:47:53 EST
+-- Started on 2021-03-04 10:37:23 EST
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -24,11 +24,24 @@ SET row_security = off;
 -- Data for Name: Exercise; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY "public"."Exercise" ("workoutID", "exerciseID", "name", "description", "bodyweight", "weight", "reps", "completed", "sets") FROM stdin;
-3	1	Pull-Ups	Description	t	\N	Till Failure	f	3
-3	2	Lat Pulldowns	Description	f	\N	10-12	f	4
-3	3	Military Press	Description	f	\N	12-16	f	3
-3	4	Incline Dumbbell Bench Press	Description	f	\N	8-10	f	3
+COPY "public"."Exercise" ("workoutID", "exerciseID", "name", "description", "bodyweight", "reps", "completed", "sets", "weight") FROM stdin;
+1	1	Burpees	Desc1	t	10	f	3	\N
+1	2	Planks	Desc2	t	30 Second Hold	f	2	\N
+1	3	Froggers	Desc3	t	10	f	3	\N
+1	4	Ice Skaters	Desc4	t	15 Each Side	f	3	\N
+1	5	Side Planks	Desc5	t	30 Seconds Each Side	f	2	\N
+1	6	Jumping Jacks	Desc6	t	60	f	1	\N
+1	7	Pulse Squats	Desc7	t	15	f	3	\N
+2	8	Squat To Press	Desc8	f	15	f	3	20 - 50 lbs
+2	9	Lateral Raises	Desc9	f	12 - 15	f	3	5 - 25 lbs
+2	10	Floor Chest Flys	Desc10	f	Till Failure	f	3	20 - 40 lbs
+2	11	Bent Over Rows	Desc11	f	15 - 18	f	3	20 - 50 lbs
+2	12	Goblet Squats	Desc12	f	Till Failure	f	3	20 - 80 lbs
+2	13	Split Squats	Desc13	f	15 Each Leg	f	2	20 - 50 lbs
+3	14	Plank w/ Shoulder Taps	Desc14	t	15	f	3	\N
+3	15	Push Ups	Desc15	t	15	f	3	\N
+3	16	Side Lunges	Desc16	t	12 Each Side	f	3	\N
+3	17	Jump Squats	Desc17	t	20	f	2	\N
 \.
 
 
@@ -39,9 +52,9 @@ COPY "public"."Exercise" ("workoutID", "exerciseID", "name", "description", "bod
 --
 
 COPY "public"."Intensity" ("intensityID", "name", "time", "description") FROM stdin;
-1	Light	20 Minutes	Quick workout focused on maximizing heart and metabolic rates to burn fat for that day. It \n\t\tis recommended to do this workout in the morning.
-2	Moderate	40 Minutes	Average length workout focused on \n\t\tbuilding foundational strength and burning fat.
-3	Heavy	60 Minutes	For the hard workers, intense workout that\n\t\tprioritizes hypertrophy while maximizing muscle and strength progression.
+1	Light	<20 Minutes	Quick workout focused on maximizing heart rate and efficiently stimulating each muscle group
+2	Moderate	40 - 60 Minutes	Full body push / pull / legs (PPL) split testing foundational strength and compound movements
+3	Heavy	60+ Minutes	Intense workout split that utilizes both hypertrophy and progressive overload to push user limits
 \.
 
 
@@ -52,10 +65,21 @@ COPY "public"."Intensity" ("intensityID", "name", "time", "description") FROM st
 --
 
 COPY "public"."Workout" ("workoutID", "intensityID", "name", "description", "completed") FROM stdin;
-2	1	Bodyweight HIIT Workout	Quick 20 minute AMRAP (as many rounds as possible) high intensity interval training.	f
-3	2	Upper Body	Moderate upper body workout focusing on foundational movements such as military press, russian deadlifts, and lat pulldowns	f
-4	3	Full Lower Body	Intense 60 minute workout maximizes muscle growth in the hamstrings, glutes, and quads while allowing optimal rest periods.	f
-5	2	Lower Body	Description...	f
+1	1	Bodyweight HIIT	High intensity interval training using only bodyweight exercises guaranteed to break a sweat	f
+2	1	Dumbbell Only At-Home Workout	Quick at-home workout you can do with just two dumbbells in the comfort of your home	f
+3	1	Full Body AMRAP	4 exercises, 20 minutes, pushing the user to do as many rounds as possible within the time limit.	f
+4	2	Chest Focused Push Day	Targets chest, shoulders, and triceps but emphasizes compound chest movements	f
+5	2	Back Focused Pull Day	Targets back and biceps with emphasis on vertical and horizontal back movements	f
+6	2	Quad Focused Leg Day	Targets legs and abs while targeting the quads with lunges and leg extensions	f
+7	2	Shoulder Focused Push Day	Targets chest, shoulders, and triceps focusing on overhead press and delts	f
+8	2	Bicep Focused Pull Day	Emphasizes strengthening the biceps with supersets while incorporating back muscles	f
+9	2	Hamstring Focused Leg Day	Utilizes compound movements such as squats and deadlifts to stimulate the hamstrings	f
+10	3	Chest & Triceps	Prioritizes bench press, incline dumbbell press, and dips while supersetting triceps	f
+11	3	Shoulders, Back & Biceps	Targets military press, lateral raises, pull ups, and bent-over rows. Arm finisher.	f
+12	3	Legs & Abs	Pushes one rep max on back squats, follows with weighted lunges and finishes with an intense abs	f
+13	3	Chest & Back	Arnolds famous split, utilizes antagonistic muscles to allow more appropriate training frequency	f
+14	3	Shoulders, Triceps & Biceps	Pushes users with military press and arnold press supersets, finishes with arms	f
+15	3	Legs & Abs v2	Utilizes front squats, goblet squats, and hip extensions to provide variety in leg routines	f
 \.
 
 
@@ -65,7 +89,7 @@ COPY "public"."Workout" ("workoutID", "intensityID", "name", "description", "com
 -- Name: Exercise_exerciseID_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('"public"."Exercise_exerciseID_seq"', 4, true);
+SELECT pg_catalog.setval('"public"."Exercise_exerciseID_seq"', 17, true);
 
 
 --
@@ -83,10 +107,10 @@ SELECT pg_catalog.setval('"public"."Intensity_intensityID_seq"', 3, true);
 -- Name: Workout_workoutID_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('"public"."Workout_workoutID_seq"', 5, true);
+SELECT pg_catalog.setval('"public"."Workout_workoutID_seq"', 15, true);
 
 
--- Completed on 2021-03-03 15:47:53 EST
+-- Completed on 2021-03-04 10:37:23 EST
 
 --
 -- PostgreSQL database dump complete

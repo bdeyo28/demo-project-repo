@@ -8,8 +8,10 @@
                 <span></span>
                 <div class="content">
                     <h3>{{exercise.exerciseName}}</h3>
-                    <p>{{exercise.exerciseDesc}}</p>
-                    <a [routerLink] = "['/getExercise/', exercise.exerciseID]" class="select1">View Details</a>
+                    <p>Sets: {{exercise.exerciseSets}}</p>
+                    <p>Reps: {{exercise.exerciseReps}}</p>
+                    <p>Suggest Weight: {{exercise.exerciseWeight}}</p>
+                    <a [routerLink] = "['/getExercise/', exercise.exerciseID]" class="select1">View Video</a>
                 </div>
             </div>
         </div>

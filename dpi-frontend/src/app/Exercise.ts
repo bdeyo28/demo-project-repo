@@ -9,7 +9,7 @@ export interface Exercise {
 
     exerciseID? : number;
     workoutID? : number;
-    exerciseSets : number
-    exerciseWeight : number;
+    exerciseSets : number;
+    exerciseWeight : string;
     
 }

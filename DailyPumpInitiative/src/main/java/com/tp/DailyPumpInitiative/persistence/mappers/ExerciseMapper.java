@@ -18,9 +18,10 @@ public class ExerciseMapper implements RowMapper<Exercise> {
         toReturn.setExerciseName(resultSet.getString("name"));
         toReturn.setExerciseDesc(resultSet.getString("description"));
         toReturn.setBodyweight(resultSet.getBoolean("bodyweight"));
-        toReturn.setExerciseWeight(resultSet.getInt("weight"));
+        toReturn.setExerciseWeight(resultSet.getString("weight"));
         toReturn.setExerciseReps(resultSet.getString("reps"));
         toReturn.setComplete(resultSet.getBoolean("completed"));
+        toReturn.setExerciseSets(resultSet.getInt("sets"));
 
         return toReturn;
     }

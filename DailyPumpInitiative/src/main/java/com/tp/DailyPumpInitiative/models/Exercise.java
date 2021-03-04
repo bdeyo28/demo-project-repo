@@ -5,7 +5,7 @@ public class Exercise {
     private String exerciseName;
     private boolean bodyweight;
     private boolean isComplete;
-    private Integer exerciseWeight;
+    private String exerciseWeight;
     private String exerciseReps;
     private Integer exerciseID;
     private Integer workoutID;
@@ -17,7 +17,7 @@ public class Exercise {
 
     }
 
-    public Exercise (String exerciseName, Integer exerciseWeight, String exerciseReps, Integer workoutID
+    public Exercise (String exerciseName, String exerciseWeight, String exerciseReps, Integer workoutID
         , boolean bodyweight, boolean isComplete, Integer exerciseID, String exerciseDesc,
                      Integer exerciseSets)
     {
@@ -70,11 +70,11 @@ public class Exercise {
         isComplete = complete;
     }
 
-    public Integer getExerciseWeight() {
+    public String getExerciseWeight() {
         return exerciseWeight;
     }
 
-    public void setExerciseWeight(Integer exerciseWeight) {
+    public void setExerciseWeight(String exerciseWeight) {
         this.exerciseWeight = exerciseWeight;
     }
 

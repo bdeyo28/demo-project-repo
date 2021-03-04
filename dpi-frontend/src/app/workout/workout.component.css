@@ -82,9 +82,9 @@
     bottom: 20px;
     background: linear-gradient(to right bottom, gray, black, darkslategray, black, gray);
     background-position: center right;
-    -moz-opacity: .9;
-    -khtml-opacity: .9;
-    opacity: .9;
+    -moz-opacity: .8;
+    -khtml-opacity: .8;
+    opacity: .8;
     border: 2px solid #1e1f23;
     box-shadow: 0 20px 50px rgba(0,0,0,0.5);
     transition: 0.5s;

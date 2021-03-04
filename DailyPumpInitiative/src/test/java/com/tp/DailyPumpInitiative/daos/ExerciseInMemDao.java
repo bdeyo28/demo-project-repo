@@ -38,15 +38,15 @@ public class ExerciseInMemDao implements ExerciseDao {
         workoutList.add(newWorkout);
 
         // configure exercises
-        newExercise = new Exercise("Front Squats", 150, "5 - 7", 3, false
+        newExercise = new Exercise("Front Squats", "150", "5 - 7", 3, false
                 , false, 1, "Desc1", 5);
         exerciseList.add(newExercise);
 
-        newExercise = new Exercise("Back Squats", 160, "5 - 7", 3, false
+        newExercise = new Exercise("Back Squats", "160", "5 - 7", 3, false
                 , true, 2, "Desc2", 4);
         exerciseList.add(newExercise);
 
-        newExercise = new Exercise("Lunges", 120, "6 - 7", 3, false
+        newExercise = new Exercise("Lunges", "120", "6 - 7", 3, false
                 , false, 3, "Desc3", 5);
         exerciseList.add(newExercise);
     }
@@ -85,6 +85,16 @@ public class ExerciseInMemDao implements ExerciseDao {
             }
         }
         return toReturn;
+    }
+
+    @Override
+    public void deleteExerciseByID(Integer exerciseID) {
+
+    }
+
+    @Override
+    public Exercise addExerciseToList(Exercise toAdd) {
+        return null;
     }
 
 }

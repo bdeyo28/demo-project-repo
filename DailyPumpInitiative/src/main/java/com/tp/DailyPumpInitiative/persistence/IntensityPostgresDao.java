@@ -46,7 +46,7 @@ public class IntensityPostgresDao implements IntensityDao {
     {
         List<Workout> toReturn = template.query("SELECT *\n" +
                 "FROM \"Workout\"\n" +
-                "INNER JOIN \"Intensity\" ON \"Workout\".\"intensityID\" = \"Workout\".\"intensityID\"\n" +
+                "INNER JOIN \"Intensity\" ON \"Workout\".\"intensityID\" = \"Intensity\".\"intensityID\"\n" +
                 "WHERE \"Workout\".\"intensityID\" = '" + intensityID + "';", new WorkoutMapper() );
 
         if (toReturn.isEmpty())

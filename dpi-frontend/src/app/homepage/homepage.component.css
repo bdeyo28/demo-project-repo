@@ -361,8 +361,9 @@ body {
     align-items: center;
     flex-wrap: wrap;
     min-height: 100vh;
-    background-image: url("/assets/lion.jpg");
-    background-size:contain;
+    background-image: url("/assets/motivational.jpg");
+    background-attachment: fixed;
+    background-position: left;
 }
 
 @keyframes animate1 {
