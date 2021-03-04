@@ -4,9 +4,9 @@ export interface Intensity {
 
     workoutList? : Workout[];
 
-    intensityName : String;
-    intensityDuration : String;
-    intensityDescription :  String;
+    intensityName : string;
+    intensityDuration : string;
+    intensityDescription :  string;
 
     intensityID? : number;
 

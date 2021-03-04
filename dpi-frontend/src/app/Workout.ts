@@ -4,8 +4,8 @@ export interface Workout {
 
     exerciseList : Exercise[];
 
-    workoutName : String;
-    workoutDesc : String;
+    workoutName : string;
+    workoutDesc : string;
 
     isComplete : boolean;
 

@@ -2,10 +2,12 @@ export interface Exercise {
 
     bodyweight : boolean;
     isComplete : boolean;
+    exerciseURL : string;
 
-    exerciseReps : String;
-    exerciseDesc : String;
-    exerciseName : String;
+
+    exerciseReps : string;
+    exerciseDesc : string;
+    exerciseName : string;
 
     exerciseID? : number;
     workoutID? : number;

@@ -10,7 +10,8 @@
                     <h3>{{exercise.exerciseName}}</h3>
                     <p>Sets: {{exercise.exerciseSets}}</p>
                     <p>Reps: {{exercise.exerciseReps}}</p>
-                    <p>Suggest Weight: {{exercise.exerciseWeight}}</p>
+                    <p *ngIf = "!exercise.bodyweight">Suggest Weight: {{exercise.exerciseWeight}}</p>
+                    <p *ngIf = "exercise.bodyweight">Bodyweight Exercise</p>
                     <a [routerLink] = "['/getExercise/', exercise.exerciseID]" class="select1">View Video</a>
                 </div>
             </div>

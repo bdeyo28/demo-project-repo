@@ -22,6 +22,7 @@ public class ExerciseMapper implements RowMapper<Exercise> {
         toReturn.setExerciseReps(resultSet.getString("reps"));
         toReturn.setComplete(resultSet.getBoolean("completed"));
         toReturn.setExerciseSets(resultSet.getInt("sets"));
+        toReturn.setExerciseURL((resultSet.getString("url")));
 
         return toReturn;
     }

@@ -21,9 +21,9 @@ public class ExercisePostgresDao implements ExerciseDao {
     @Override
     public Exercise getExerciseByID(Integer exerciseID)
     {
-        List<Exercise> toReturn = template.query("SELECT \"workoutID\", \"exerciseID\", \"name\", \"description\", \"bodyweight\", \"weight\", \"reps\", \"completed\", \"sets\"\n" +
-                        "FROM \"Exercise\"\n" +
-                        "WHERE (\"exerciseID\" = '" + exerciseID + "')"
+        List<Exercise> toReturn = template.query("SELECT \"workoutID\", \"exerciseID\", \"name\", \"description\", " +
+                        "\"bodyweight\", \"reps\", \"completed\", \"sets\", \"weight\", \"url\" " +
+                        "FROM \"Exercise\" WHERE \"exerciseID\" = " + exerciseID + ";"
                     , new ExerciseMapper() );
 
         if (toReturn.isEmpty())

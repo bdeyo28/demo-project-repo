@@ -37,15 +37,15 @@ public class WorkoutInMemDao implements WorkoutDao {
 
         // configure exercises
         newExercise = new Exercise("Front Squats", "150", "5 - 7", 3, false
-                , false, 1, "Desc1", 5);
+                , false, 1, "Desc1", 5, "url");
         exerciseList.add(newExercise);
 
         newExercise = new Exercise("Back Squats", "160", "5 - 7", 3, false
-                , true, 2, "Desc2", 4);
+                , true, 2, "Desc2", 4, "url");
         exerciseList.add(newExercise);
 
         newExercise = new Exercise("Lunges", "120", "6 - 7", 3, false
-                , false, 3, "Desc3", 5);
+                , false, 3, "Desc3", 5, "url");
         exerciseList.add(newExercise);
     }
 

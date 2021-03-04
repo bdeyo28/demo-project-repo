@@ -1,0 +1,118 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 13.1
+-- Dumped by pg_dump version 13.1
+
+-- Started on 2021-03-04 14:11:20 EST
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- TOC entry 3278 (class 0 OID 17235)
+-- Dependencies: 205
+-- Data for Name: Exercise; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY "public"."Exercise" ("workoutID", "exerciseID", "name", "description", "bodyweight", "reps", "completed", "sets", "weight") FROM stdin;
+1	1	Burpees	Desc1	t	10	f	3	\N
+1	2	Planks	Desc2	t	30 Second Hold	f	2	\N
+1	3	Froggers	Desc3	t	10	f	3	\N
+1	4	Ice Skaters	Desc4	t	15 Each Side	f	3	\N
+1	5	Side Planks	Desc5	t	30 Seconds Each Side	f	2	\N
+1	6	Jumping Jacks	Desc6	t	60	f	1	\N
+1	7	Pulse Squats	Desc7	t	15	f	3	\N
+3	14	Plank w/ Shoulder Taps	Desc14	t	15	f	3	\N
+3	15	Push Ups	Desc15	t	15	f	3	\N
+3	16	Side Lunges	Desc16	t	12 Each Side	f	3	\N
+3	17	Jump Squats	Desc17	t	20	f	2	\N
+2	18	Squat To Press	Desc8	f	15	f	3	20 - 50 lbs
+2	19	Lateral Raises	Desc9	f	12 - 15	f	3	5 - 25 lbs
+2	20	Floor Dumbbell Press	Desc10	f	Till Failure	f	3	10 - 50 lbs
+2	21	Bent Over Rows	Desc11	f	10 - 12	f	3	20 - 60 lbs
+2	22	Goblet Squats	Desc12	f	Till Failure	f	2	20 - 80 lbs
+2	23	Split Squats	Desc13	f	15 Each Side	f	2	20 - 50 lbs
+\.
+
+
+--
+-- TOC entry 3274 (class 0 OID 17153)
+-- Dependencies: 201
+-- Data for Name: Intensity; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY "public"."Intensity" ("intensityID", "name", "time", "description") FROM stdin;
+1	Light	<20 Minutes	Quick workout focused on maximizing heart rate and efficiently stimulating each muscle group
+2	Moderate	40 - 60 Minutes	Full body push / pull / legs (PPL) split testing foundational strength and compound movements
+3	Heavy	60+ Minutes	Intense workout split that utilizes both hypertrophy and progressive overload to push user limits
+\.
+
+
+--
+-- TOC entry 3276 (class 0 OID 17203)
+-- Dependencies: 203
+-- Data for Name: Workout; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY "public"."Workout" ("workoutID", "intensityID", "name", "description", "completed") FROM stdin;
+1	1	Bodyweight HIIT	High intensity interval training using only bodyweight exercises guaranteed to break a sweat	f
+2	1	Dumbbell Only At-Home Workout	Quick at-home workout you can do with just two dumbbells in the comfort of your home	f
+3	1	Full Body AMRAP	4 exercises, 20 minutes, pushing the user to do as many rounds as possible within the time limit.	f
+4	2	Chest Focused Push Day	Targets chest, shoulders, and triceps but emphasizes compound chest movements	f
+5	2	Back Focused Pull Day	Targets back and biceps with emphasis on vertical and horizontal back movements	f
+6	2	Quad Focused Leg Day	Targets legs and abs while targeting the quads with lunges and leg extensions	f
+7	2	Shoulder Focused Push Day	Targets chest, shoulders, and triceps focusing on overhead press and delts	f
+8	2	Bicep Focused Pull Day	Emphasizes strengthening the biceps with supersets while incorporating back muscles	f
+9	2	Hamstring Focused Leg Day	Utilizes compound movements such as squats and deadlifts to stimulate the hamstrings	f
+10	3	Chest & Triceps	Prioritizes bench press, incline dumbbell press, and dips while supersetting triceps	f
+11	3	Shoulders, Back & Biceps	Targets military press, lateral raises, pull ups, and bent-over rows. Arm finisher.	f
+12	3	Legs & Abs	Pushes one rep max on back squats, follows with weighted lunges and finishes with an intense abs	f
+13	3	Chest & Back	Arnolds famous split, utilizes antagonistic muscles to allow more appropriate training frequency	f
+14	3	Shoulders, Triceps & Biceps	Pushes users with military press and arnold press supersets, finishes with arms	f
+15	3	Legs & Abs v2	Utilizes front squats, goblet squats, and hip extensions to provide variety in leg routines	f
+\.
+
+
+--
+-- TOC entry 3287 (class 0 OID 0)
+-- Dependencies: 204
+-- Name: Exercise_exerciseID_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('"public"."Exercise_exerciseID_seq"', 23, true);
+
+
+--
+-- TOC entry 3288 (class 0 OID 0)
+-- Dependencies: 200
+-- Name: Intensity_intensityID_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('"public"."Intensity_intensityID_seq"', 3, true);
+
+
+--
+-- TOC entry 3289 (class 0 OID 0)
+-- Dependencies: 202
+-- Name: Workout_workoutID_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('"public"."Workout_workoutID_seq"', 15, true);
+
+
+-- Completed on 2021-03-04 14:11:20 EST
+
+--
+-- PostgreSQL database dump complete
+--
+

@@ -11,6 +11,7 @@ public class Exercise {
     private Integer workoutID;
     private String exerciseDesc;
     private Integer exerciseSets;
+    private String exerciseURL;
 
     public Exercise()
     {
@@ -19,7 +20,7 @@ public class Exercise {
 
     public Exercise (String exerciseName, String exerciseWeight, String exerciseReps, Integer workoutID
         , boolean bodyweight, boolean isComplete, Integer exerciseID, String exerciseDesc,
-                     Integer exerciseSets)
+                     Integer exerciseSets, String exerciseURL)
     {
         this.exerciseDesc = exerciseDesc;
         this.bodyweight = bodyweight;
@@ -30,6 +31,7 @@ public class Exercise {
         this.workoutID = workoutID;
         this.exerciseID = exerciseID;
         this.exerciseSets = exerciseSets;
+        this.exerciseURL = exerciseURL;
     }
 
     public Exercise (Exercise that)
@@ -45,6 +47,13 @@ public class Exercise {
         this.workoutID = that.workoutID;
     }
 
+    public String getExerciseURL() {
+        return exerciseURL;
+    }
+
+    public void setExerciseURL(String exerciseURL) {
+        this.exerciseURL = exerciseURL;
+    }
 
     public String getExerciseName() {
         return exerciseName;
