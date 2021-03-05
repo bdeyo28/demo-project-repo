@@ -1,19 +1,38 @@
-#header {
+#header1 {
     margin: auto;
     text-align: center;
     height: 50%;
     width: 100%;
     color: whitesmoke;
     font-size: large;
-    text-shadow: 10px 10px 10px  darkslategray;
+    text-shadow: 5px 5px 5px  #800000;
     border: 5px solid gray;
     background: rgba(17, 17, 17, 0.486);
     margin-right: 200px;
     margin-left: 200px;
     margin-top: 100px;
-    margin-bottom: 100px;
+    padding-bottom: 50px;
     
   }
+
+  #header2 {
+    margin: auto;
+    text-align: center;
+    height: 50%;
+    width: 100%;
+    color: whitesmoke;
+    font-size: large;
+    text-shadow: 5px 5px 5px  #800000;
+    border: 5px solid gray;
+    background: rgba(17, 17, 17, 0.486);
+    margin-right: 200px;
+    margin-left: 200px;
+    margin-top: 100px;
+    margin-bottom: 200px;
+    padding-bottom: 50px;
+    
+  }
+  
   
     body {
       display: flex;
@@ -24,4 +43,19 @@
       background: whitesmoke;
       background-size: cover;
       background-attachment: fixed;
+  }
+
+select {
+    width: 100px;
+    height: 20px;
+}
+
+  button {
+      height: 20px;
+      width: 80px;
+  }
+
+  button:hover {
+      background-color: #800000;
+      color: white;
   }

@@ -1,13 +1,27 @@
 
 <body>
 
-    <div id="header">
+    <div id="header1">
         <h1>Add A Workout</h1>
         <h3>Workout Name:</h3>
-        <input style = "width: 300px" type = "text" [(ngModel)] = "name" placeholder="Enter Here:">
+        <input style = "width: 300px" 
+                type = "text" 
+                [(ngModel)] = "name" 
+                placeholder="Enter Workout Name Here : ">
         <br>
         <h3>Intensity Level</h3>
-        <input type = "number" [(ngModel)] = "intensityID">
+        <select [(ngModel)] = "intensityID" ngOptions = "let intensity in intensityList">
+            <option value = "1">{{intensity1}}</option>
+            <option value = "2">{{intensity2}}</option>
+            <option value = "3">{{intensity3}}</option>
+        </select>
+        <br>
+        <h3>Description (Optional)</h3>
+        <input style = "width: 300px" 
+                type = "text" 
+                [(ngModel)] = "desc" 
+                placeholder="Enter Description Here : ">
+        <br>
         <br>
         <button (click)="addWorkout()">Add</button>
         <br>
@@ -17,15 +31,14 @@
     <br>
     <br>
 
-    <div id="header">
+    <div id="header2">
         <h1>Delete A Workout By ID</h1>
-        <h3>Workout Name:</h3>
-        <input style = "width: 300px" type = "text" [(ngModel)] = "name" placeholder="Enter Here:">
+        <h3>Lookup Workout ID's</h3>
         <br>
-        <h3>Intensity Level</h3>
-        <input type = "number" [(ngModel)] = "intensityID">
+        <input style = "width: 300px" type = "text" [(ngModel)] = "intensityID" placeholder="Enter Here:">
         <br>
-        <button (click)="addWorkout()">Add</button>
+        <br>
+        <button (click)="deleteWorkout()">Delete</button>
         <br>
  
     </div>
