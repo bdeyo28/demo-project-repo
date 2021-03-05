@@ -23,7 +23,21 @@
                 placeholder="Enter Description Here : ">
         <br>
         <br>
-        <button (click)="addWorkout()">Add Workout</button>
+        <button id = "button1" (click)="addWorkout()">Add Workout</button>
+        <br>
+ 
+    </div>
+
+    <br>
+    <br>
+
+    <div id="header3">
+        <h1>Add Exercises To Existing Workout</h1>
+        <h3>Lookup Workout ID's</h3> <!-- TODO // SET UP A DROP DOWN FOR ALL ID'S AND CORRESPONDING NAMES-->
+        <input style = "width: 300px" type = "number" [(ngModel)] = "workoutID" placeholder="Enter ID Here:">
+        <br>
+        <br>
+        <button id = "button3" (click)="deleteWorkout()">Add Exercises</button>
         <br>
  
     </div>
@@ -34,11 +48,10 @@
     <div id="header2">
         <h1>Delete A Workout By ID</h1>
         <h3>Lookup Workout ID's</h3> <!-- TODO // SET UP A DROP DOWN FOR ALL ID'S AND CORRESPONDING NAMES-->
-        <br>
         <input style = "width: 300px" type = "number" [(ngModel)] = "workoutID" placeholder="Enter ID Here:">
         <br>
         <br>
-        <button (click)="deleteWorkout()">Delete Workout</button>
+        <button id = "button2" (click)="deleteWorkout()">Delete Workout</button>
         <br>
  
     </div>

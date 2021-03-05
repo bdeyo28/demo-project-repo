@@ -4,6 +4,7 @@ import { Contact } from './Contact';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators'
 import { HttpHeaders } from '@angular/common/http'
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -13,8 +14,10 @@ export class ContactService {
 
   private api : "https://mailthis.to/bdeyo28";
 
-  constructor(private http : HttpClient) { }
+  constructor(private http : HttpClient, private router : Router) { }
+
   
+
   PostMessage(input: any) {
     return this.http.post(this.api, input, { responseType: 'text' })
       .pipe(
