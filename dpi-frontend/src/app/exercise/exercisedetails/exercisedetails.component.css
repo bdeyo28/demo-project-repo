@@ -17,3 +17,9 @@
     background: darkgray;
     background-size: cover;
 }
+
+iframe {
+  height: 600px;
+  width: 600px;
+  border: 20px solid whitesmoke;
+}
