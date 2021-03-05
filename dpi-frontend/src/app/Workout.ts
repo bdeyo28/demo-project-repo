@@ -5,7 +5,7 @@ export interface Workout {
     exerciseList : Exercise[];
 
     workoutName : string;
-    workoutDesc : string;
+    workoutDescription : string;
 
     isComplete : boolean;
 

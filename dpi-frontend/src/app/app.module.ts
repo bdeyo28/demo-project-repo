@@ -30,7 +30,7 @@ import { ExercisedetailsComponent } from './exercise/exercisedetails/exercisedet
     ExerciselistComponent,
     WorkoutlistComponent,
     CarouselComponent,
-    ExercisedetailsComponent
+    ExercisedetailsComponent,
   ],
   imports: [
     BrowserModule,
