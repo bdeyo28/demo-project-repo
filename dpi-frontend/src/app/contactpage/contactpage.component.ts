@@ -1,10 +1,6 @@
 import { Component, Input, OnInit, NgModule } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators, NgForm } from '@angular/forms';
-import { ContactService } from 'src/app/contact.service';
-import { FormsModule } from '@angular/forms';
-import { Contact } from '../Contact';
-import { Observable } from 'rxjs';
-import { HttpClientModule, HttpClient, HttpHeaders } from "@angular/common/http"
+import { HttpClientModule, HttpClient, HttpHeaders } from "@angular/common/http";
 
 @Component({
   selector: 'app-contactpage',
@@ -13,22 +9,24 @@ import { HttpClientModule, HttpClient, HttpHeaders } from "@angular/common/http"
 })
 export class ContactpageComponent implements OnInit {
 
-  name : string;
-  email : string;
-  message : string;
-
-  httpOptions = {headers: new HttpHeaders({"Content-Type" : "application/json"})};
-
   constructor(private http : HttpClient) { }
-
 
   ngOnInit() {
 
   }
 
-  submitForm(contact : Contact) {
-    this.http.post<Contact>('https://mailthis.to/bdeyo28', contact)
-          .subscribe(status => console.log(JSON.stringify(status)));
+  onSubmit(contactForm: NgForm) {
+    if (contactForm.valid) {
+      const email = contactForm.value;
+      const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+      this.http.post('https://formspree.io/f/xqkgvvgy',
+        { name: email.name, replyto: email.email, message: email.messages },
+        { 'headers': headers }).subscribe(
+          response => {
+            console.log(response);
+          }
+        );
+    }
   }
   
 }
