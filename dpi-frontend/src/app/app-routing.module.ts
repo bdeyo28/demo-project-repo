@@ -9,13 +9,15 @@ import { IntensitylistComponent} from './intensity/intensitylist/intensitylist.c
 import { ExerciselistComponent} from './exercise/exerciselist/exerciselist.component';
 import { WorkoutlistComponent } from './workout/workoutlist/workoutlist.component';
 import { ExercisedetailsComponent } from './exercise/exercisedetails/exercisedetails.component';
+import { EditworkoutComponent } from './workout/editworkout/editworkout.component';
 
 const routes: Routes = [{path: "", component : HomepageComponent},
                         {path: "contact", component : ContactpageComponent},
                         {path: "workouts/:intensityID", component: WorkoutlistComponent},
                         {path: "exercises/:workoutID", component: ExerciselistComponent},
                         {path: "intensitys", component: IntensitylistComponent},
-                        {path: "getExercise/:exerciseID", component : ExercisedetailsComponent}];
+                        {path: "getExercise/:exerciseID", component : ExercisedetailsComponent},
+                        {path: "editworkout", component: EditworkoutComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

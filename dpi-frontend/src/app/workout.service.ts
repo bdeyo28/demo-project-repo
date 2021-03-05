@@ -29,6 +29,28 @@ export class WorkoutService {
   //   );
   // };
 
+  addWorkout(toAdd : Workout) : Observable<Workout> {
+    return this.http.get<Workout>(this.baseURL + "/addWorkout", this.httpOptions)
+    .pipe(
+      tap(x => console.log(x)),
+      catchError(err => {
+        console.log(err);
+        return of(null);
+      })
+    );
+  };
+
+  deleteWorkout(id : number) : Observable<Workout> {
+    return this.http.get<Workout>(this.baseURL + "/deleteWorkout/" + id)
+    .pipe(
+      tap(x => console.log(x)),
+      catchError(err => {
+        console.log(err);
+        return of(null);
+      })
+    );
+  }
+
   getWorkoutList(id : number) : Observable<Workout[]> {
     return this.http.get<Workout[]>(this.baseURL + "/workouts/" + id)
     .pipe(

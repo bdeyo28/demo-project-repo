@@ -58,7 +58,8 @@ public class WorkoutPostgresDao implements WorkoutDao {
     @Override
     public Workout addWorkoutToList(Workout toAdd) {
         Integer workoutID = template.queryForObject("INSERT into \"Workout\" (\"intensityID\", \"name\", \"description\", \"completed\")\n" +
-                        "VALUES (?, ?, ?, ?);", new IntegerMapper("workoutID"),
+                        "VALUES (?, ?, ?, ?)\n" +
+                        "RETURNING *;", new IntegerMapper("workoutID"),
                 toAdd.getIntensityID(),
                 toAdd.getWorkoutName(),
                 toAdd.getWorkoutDescription(),

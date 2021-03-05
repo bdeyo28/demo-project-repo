@@ -38,7 +38,7 @@ public class WorkoutController {
         }
     }
 
-    @DeleteMapping("deleteWorkout/{workoutID")
+    @DeleteMapping("/deleteWorkout/{workoutID}")
     public void deleteWorkoutByID(@PathVariable Integer workoutID)
     {
         try {
@@ -50,8 +50,8 @@ public class WorkoutController {
         }
     }
 
-    @PostMapping("addWorkout")
-    public ResponseEntity addWorkoutToList(Workout toAdd)
+    @PostMapping("/addWorkout")
+    public ResponseEntity addWorkoutToList(@RequestBody Workout toAdd)
     {
         Workout toReturn = null;
         try {
