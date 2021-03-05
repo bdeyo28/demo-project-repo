@@ -1,7 +1,35 @@
-<span>Workout Title</span>
-<input type="text" [(ngModel)]="name">
-<span>Intensity ID: </span>
-<input type="number" [(ngModel)]="intensityID">
-<button (click)="addWorkout()">Add</button>
 
-<p>{{name}} - {{intensityID}}</p>
+<body>
+
+    <div id="header">
+        <h1>Add A Workout</h1>
+        <h3>Workout Name:</h3>
+        <input style = "width: 300px" type = "text" [(ngModel)] = "name" placeholder="Enter Here:">
+        <br>
+        <h3>Intensity Level</h3>
+        <input type = "number" [(ngModel)] = "intensityID">
+        <br>
+        <button (click)="addWorkout()">Add</button>
+        <br>
+ 
+    </div>
+
+    <br>
+    <br>
+
+    <div id="header">
+        <h1>Delete A Workout By ID</h1>
+        <h3>Workout Name:</h3>
+        <input style = "width: 300px" type = "text" [(ngModel)] = "name" placeholder="Enter Here:">
+        <br>
+        <h3>Intensity Level</h3>
+        <input type = "number" [(ngModel)] = "intensityID">
+        <br>
+        <button (click)="addWorkout()">Add</button>
+        <br>
+ 
+    </div>
+
+    <!-- <app-exercise *ngFor="let i of exerciseList" [exercise]="i"></app-exercise> -->
+
+</body>

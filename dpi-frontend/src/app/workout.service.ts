@@ -18,19 +18,19 @@ export class WorkoutService {
   constructor(private http : HttpClient, private router : ActivatedRoute) {
    }
 
-  //  getWorkout() : Observable<Workout> {
-  //   return this.http.get<Workout>(this.baseURL + "/workout/3") // pass in id 
-  //   .pipe(
-  //     tap(x => console.log(x)),
-  //     catchError(err => {
-  //       console.log(err);
-  //       return of(null);
-  //     })
-  //   );
-  // };
+   getWorkoutByID(id : number) : Observable<Workout> {
+    return this.http.get<Workout>(this.baseURL + "/workout/" + id)
+    .pipe(
+      tap(x => console.log(x)),
+      catchError(err => {
+        console.log(err);
+        return of(null);
+      })
+    );
+  };
 
   addWorkout(toAdd : Workout) : Observable<Workout> {
-    return this.http.get<Workout>(this.baseURL + "/addWorkout", this.httpOptions)
+    return this.http.post<Workout>(this.baseURL + "/addWorkout", toAdd, this.httpOptions)
     .pipe(
       tap(x => console.log(x)),
       catchError(err => {
@@ -41,7 +41,7 @@ export class WorkoutService {
   };
 
   deleteWorkout(id : number) : Observable<Workout> {
-    return this.http.get<Workout>(this.baseURL + "/deleteWorkout/" + id)
+    return this.http.delete<Workout>(this.baseURL + "/deleteWorkout/" + id)
     .pipe(
       tap(x => console.log(x)),
       catchError(err => {
