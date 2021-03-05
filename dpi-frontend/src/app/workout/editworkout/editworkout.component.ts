@@ -49,7 +49,7 @@ export class EditworkoutComponent implements OnInit {
   }
 
   deleteWorkout() {
-      
+      this.service.deleteWorkout(this.workoutID).subscribe((_) => this.router.navigate([""]));
   }
 
 }

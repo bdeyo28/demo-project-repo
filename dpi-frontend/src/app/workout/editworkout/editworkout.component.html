@@ -23,7 +23,7 @@
                 placeholder="Enter Description Here : ">
         <br>
         <br>
-        <button (click)="addWorkout()">Add</button>
+        <button (click)="addWorkout()">Add Workout</button>
         <br>
  
     </div>
@@ -33,12 +33,12 @@
 
     <div id="header2">
         <h1>Delete A Workout By ID</h1>
-        <h3>Lookup Workout ID's</h3>
+        <h3>Lookup Workout ID's</h3> <!-- TODO // SET UP A DROP DOWN FOR ALL ID'S AND CORRESPONDING NAMES-->
         <br>
-        <input style = "width: 300px" type = "text" [(ngModel)] = "intensityID" placeholder="Enter Here:">
+        <input style = "width: 300px" type = "number" [(ngModel)] = "workoutID" placeholder="Enter ID Here:">
         <br>
         <br>
-        <button (click)="deleteWorkout()">Delete</button>
+        <button (click)="deleteWorkout()">Delete Workout</button>
         <br>
  
     </div>

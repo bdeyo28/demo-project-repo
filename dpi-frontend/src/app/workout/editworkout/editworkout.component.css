@@ -5,7 +5,7 @@
     width: 100%;
     color: whitesmoke;
     font-size: large;
-    text-shadow: 5px 5px 5px  #800000;
+    text-shadow: 5px 5px 5px  black;
     border: 5px solid gray;
     background: rgba(17, 17, 17, 0.486);
     margin-right: 200px;
@@ -22,7 +22,7 @@
     width: 100%;
     color: whitesmoke;
     font-size: large;
-    text-shadow: 5px 5px 5px  #800000;
+    text-shadow: 5px 5px 5px  black;
     border: 5px solid gray;
     background: rgba(17, 17, 17, 0.486);
     margin-right: 200px;
@@ -52,7 +52,7 @@ select {
 
   button {
       height: 20px;
-      width: 80px;
+      width: 120px;
   }
 
   button:hover {
