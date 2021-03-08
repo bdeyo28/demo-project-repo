@@ -14,32 +14,37 @@ import { WorkoutService } from 'src/app/workout.service';
 })
 export class EditworkoutComponent implements OnInit {
 
-  @Input('ngModel')workoutID : number;
-  @Input('ngModel')name : string;
-  @Input('ngModel')intensityID : number;
-  @Input('ngModel')desc : string;
-  @Input('ngModel')intensityName : string;
+  nullID : number = 0;
+  
+  @Input('ngModel') deleteWorkoutID: number;
+  @Input('ngModel') workoutID: number;
+  @Input('ngModel') name: string;
+  @Input('ngModel') intensityID: number;
+  @Input('ngModel') desc: string;
+  @Input('ngModel') intensityName: string;
 
-  completed : boolean;
-  exerciseList : Exercise[];
-  intensityList : Intensity[];
+  completed: boolean;
+  exerciseList: Exercise[];
+  intensityList: Intensity[];
 
-  intensity1 : string;
-  intensity2 : string;
-  intensity3 : string;
+  intensity1: string;
+  intensity2: string;
+  intensity3: string;
 
-  workout1 : Workout;
-  workout2 : Workout;
-  workout3 : Workout;
+  workout1: Workout;
+  workout2: Workout;
+  workout3: Workout;
+  newWorkoutID : number;
+  selectedWorkout : Workout;
 
-  workoutList1 : Workout[];
-  workoutList2 : Workout[];
-  workoutList3 : Workout[];
+  workoutList1: Workout[];
+  workoutList2: Workout[];
+  workoutList3: Workout[];
 
-  constructor(private wkService : WorkoutService, 
-              private router : Router,
-              private activatedRoute : ActivatedRoute,
-              private intService : IntensityService) { }
+  constructor(private wkService: WorkoutService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private intService: IntensityService) { }
 
   ngOnInit(): void {
 
@@ -53,20 +58,33 @@ export class EditworkoutComponent implements OnInit {
     this.wkService.getWorkoutList(1).subscribe(list => {
       this.workoutList1 = list;
     });
-    this.wkService.getWorkoutList(2).subscribe(list => {this.workoutList2 = list});
-    this.wkService.getWorkoutList(3).subscribe(list => {this.workoutList3 = list});
+    this.wkService.getWorkoutList(2).subscribe(list => { this.workoutList2 = list });
+    this.wkService.getWorkoutList(3).subscribe(list => { this.workoutList3 = list });
 
   }
 
   addWorkout() {
-    let toAdd : Workout = {workoutName : this.name, intensityID : this.intensityID,
-                           workoutDescription : this.desc, isComplete : this.completed, 
-                           exerciseList : this.exerciseList};
+    let toAdd: Workout = {
+      workoutName: this.name, intensityID: this.intensityID,
+      workoutDescription: this.desc, isComplete: this.completed,
+      exerciseList: this.exerciseList
+    };
+
+    
+
     this.wkService.addWorkout(toAdd).subscribe((_) => this.router.navigate(["editworkout"]));
   }
 
   deleteWorkout() {
-      this.wkService.deleteWorkout(this.workoutID).subscribe((_) => this.router.navigate(["editworkout"]));
-  }
 
+    if (this.deleteWorkoutID === undefined || this.deleteWorkoutID == this.nullID)
+    {
+        alert("Please select a valid workout to delete.");
+        return;
+
+    }
+    this.wkService.deleteWorkout(this.deleteWorkoutID).subscribe((_) => this.router.navigate(["editworkout"]));
+    document.getElementById("deleteWorkout").innerHTML = "<br><br>" + "The requested workout has been deleted.";
+    document.getElementById("reset").style.display = "inline";
+  }
 }

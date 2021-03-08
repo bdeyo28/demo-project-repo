@@ -39,6 +39,17 @@ export class ExerciseService {
     );;
   }
 
+  addExercise(toAdd : Exercise) : Observable<Exercise> {
+    return this.http.post<Exercise>(this.baseURL + "/addExercise", toAdd, this.httpOptions)
+    .pipe(
+      tap(x => console.log(x)),
+      catchError(err => {
+        console.log(err);
+        return of(null);
+      })
+    );
+  }
+
   // getIsCompleted() : Observable<boolean> {
   //   return this.http.get<boolean>(this.baseURL + "/exercise/{exerciseID}")
   //   .pipe(

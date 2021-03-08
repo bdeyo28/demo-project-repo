@@ -18,6 +18,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CarouselComponent } from './homepage/carousel/carousel.component';
 import { ExercisedetailsComponent } from './exercise/exercisedetails/exercisedetails.component';
 import { EditworkoutComponent } from './workout/editworkout/editworkout.component';
+import { AddexerciseComponent } from './exercise/addexercise/addexercise.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { EditworkoutComponent } from './workout/editworkout/editworkout.componen
     CarouselComponent,
     ExercisedetailsComponent,
     EditworkoutComponent,
+    AddexerciseComponent,
   ],
   imports: [
     BrowserModule,

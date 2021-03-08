@@ -1,4 +1,4 @@
-#header1 {
+#addNewWorkout {
     margin: auto;
     text-align: center;
     height: 50%;
@@ -15,7 +15,7 @@
     
   }
 
-  #header2 {
+  #deleteWorkout {
     margin: auto;
     text-align: center;
     height: 50%;
@@ -33,7 +33,7 @@
     
   }
 
-  #header3 {
+  #addExerciseToExistingWorkout {
     margin: auto;
     text-align: center;
     height: 50%;
@@ -91,5 +91,10 @@ button {
 
 #button3:hover {
   background-color: rgba(20, 20, 20, 1);
+  color: white;
+}
+
+#resetButton:hover {
+  background-color: #800000;
   color: white;
 }

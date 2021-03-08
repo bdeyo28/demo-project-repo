@@ -10,6 +10,7 @@ import { ExerciselistComponent} from './exercise/exerciselist/exerciselist.compo
 import { WorkoutlistComponent } from './workout/workoutlist/workoutlist.component';
 import { ExercisedetailsComponent } from './exercise/exercisedetails/exercisedetails.component';
 import { EditworkoutComponent } from './workout/editworkout/editworkout.component';
+import { AddexerciseComponent } from './exercise/addexercise/addexercise.component';
 
 const routes: Routes = [{path: "", component : HomepageComponent},
                         {path: "contact", component : ContactpageComponent},
@@ -17,7 +18,8 @@ const routes: Routes = [{path: "", component : HomepageComponent},
                         {path: "exercises/:workoutID", component: ExerciselistComponent},
                         {path: "intensitys", component: IntensitylistComponent},
                         {path: "getExercise/:exerciseID", component : ExercisedetailsComponent},
-                        {path: "editworkout", component: EditworkoutComponent}];
+                        {path: "editworkout", component: EditworkoutComponent},
+                        {path: "addExercise/:workoutID", component: AddexerciseComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
