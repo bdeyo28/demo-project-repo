@@ -1,0 +1,34 @@
+
+
+
+#contactDiv {
+    width: auto;
+    height: 100%;
+    margin: auto;
+    text-align: center;
+    margin-top : 50px;
+    border: 5px solid black;
+    border-radius: 50%;
+    padding-bottom: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+    color: black;
+    background: whitesmoke;
+}
+
+#contactForm input {
+    margin-bottom: 25px;
+    height: 20px;
+    width: 300px;
+}
+
+#contactForm textarea {
+    margin-bottom: 25px;
+    height: 100px;
+    width: 300px;
+}
+
+#submit:hover {
+    color: whitesmoke;
+    background-color: black;
+}

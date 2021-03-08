@@ -27,6 +27,9 @@ export class ContactpageComponent implements OnInit {
           }
         );
     }
+
+    document.getElementById("contactForm").innerHTML = "Thank You! Your message has been sent.";
+
   }
   
 }
