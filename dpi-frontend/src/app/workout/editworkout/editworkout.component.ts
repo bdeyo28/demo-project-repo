@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Exercise } from 'src/app/Exercise';
+import { CommonModule } from '@angular/common';
 import { Intensity } from 'src/app/Intensity';
 import { IntensityService } from 'src/app/intensity.service';
 import { Workout } from 'src/app/Workout';
@@ -18,14 +19,24 @@ export class EditworkoutComponent implements OnInit {
   @Input('ngModel')intensityID : number;
   @Input('ngModel')desc : string;
   @Input('ngModel')intensityName : string;
+
   completed : boolean;
   exerciseList : Exercise[];
   intensityList : Intensity[];
+
   intensity1 : string;
   intensity2 : string;
   intensity3 : string;
 
-  constructor(private service : WorkoutService, 
+  workout1 : Workout;
+  workout2 : Workout;
+  workout3 : Workout;
+
+  workoutList1 : Workout[];
+  workoutList2 : Workout[];
+  workoutList3 : Workout[];
+
+  constructor(private wkService : WorkoutService, 
               private router : Router,
               private activatedRoute : ActivatedRoute,
               private intService : IntensityService) { }
@@ -39,17 +50,23 @@ export class EditworkoutComponent implements OnInit {
       this.intensity3 = this.intensityList[2].intensityName;
     });
 
+    this.wkService.getWorkoutList(1).subscribe(list => {
+      this.workoutList1 = list;
+    });
+    this.wkService.getWorkoutList(2).subscribe(list => {this.workoutList2 = list});
+    this.wkService.getWorkoutList(3).subscribe(list => {this.workoutList3 = list});
+
   }
 
   addWorkout() {
     let toAdd : Workout = {workoutName : this.name, intensityID : this.intensityID,
                            workoutDescription : this.desc, isComplete : this.completed, 
                            exerciseList : this.exerciseList};
-    this.service.addWorkout(toAdd).subscribe((_) => this.router.navigate([""]));
+    this.wkService.addWorkout(toAdd).subscribe((_) => this.router.navigate(["editworkout"]));
   }
 
   deleteWorkout() {
-      this.service.deleteWorkout(this.workoutID).subscribe((_) => this.router.navigate([""]));
+      this.wkService.deleteWorkout(this.workoutID).subscribe((_) => this.router.navigate(["editworkout"]));
   }
 
 }
