@@ -1,0 +1,50 @@
+#addExercises {
+    margin: auto;
+    text-align: center;
+    height: 50%;
+    width: 100%;
+    color: whitesmoke;
+    font-size: x-large;
+    text-shadow: 5px 5px 5px  black;
+    border: 5px solid gray;
+    background: rgba(0, 0, 0, 0.486);
+    margin-right: 200px;
+    margin-left: 200px;
+    margin-top: 100px;
+    padding-bottom: 50px;
+    margin-bottom: 100px;
+    
+  }
+
+  body {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    background-image: url('/assets/dudesitting.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#button1 {
+    height: 50px;
+    width: 150px;
+    font-size: large;
+}
+
+#button1:hover {
+  background-color: black;
+  color: whitesmoke;
+}
+
+select {
+  width: 150px;
+  height: 40px;
+  font-size: 20px;
+}
+
+input {
+font-size: 20px;
+text-align: center;
+}

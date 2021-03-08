@@ -44,6 +44,12 @@ public class DailyPumpServices {
 
     /* WORKOUT SERVICES */
 
+    public Workout getWorkoutByID(Integer workoutID) throws NullWorkoutException,
+            InvalidInputException
+    {
+        return workoutDao.getWorkoutByID(workoutID);
+    }
+
     public List<Workout> getWorkoutList(Integer intensityID) throws NullIntensityException,
             NullWorkoutException, InvalidInputException
     {

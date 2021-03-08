@@ -70,9 +70,19 @@ export class EditworkoutComponent implements OnInit {
       exerciseList: this.exerciseList
     };
 
-    
-
     this.wkService.addWorkout(toAdd).subscribe((_) => this.router.navigate(["editworkout"]));
+  }
+
+  addExercise() {
+
+    if (this.workoutID === undefined || this.workoutID == this.nullID)
+    {
+        alert("Please select a valid workout to add to.");
+        return;
+    }
+
+    this.router.navigate(["/addExercise/" + this.workoutID]);
+
   }
 
   deleteWorkout() {

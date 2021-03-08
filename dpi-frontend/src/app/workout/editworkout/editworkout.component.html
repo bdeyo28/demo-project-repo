@@ -26,7 +26,7 @@
         <button id = "button1" (click)="addWorkout()">Add Workout</button>
         <br>
         <br>
-        <div id = "workoutAdded">Workouts Added : </div>
+        <div style = "display: none; " id = "workoutAdded">Workouts Added : </div>
 
     </div>
 
@@ -37,22 +37,22 @@
         <h1>Add Exercises To Existing Workout</h1>
         <h3>Select Workout</h3> <!-- TODO // SET UP A DROP DOWN FOR ALL ID'S AND CORRESPONDING NAMES-->
         <select [(ngModel)] = "workoutID" style = "width: 500px">
-            <option value = ""></option>
-            <option value = "">Light Intensity</option>
+            <option value = "{{nullID}}"></option>
+            <option value = "{{nullID}}">Light Intensity</option>
             <option *ngFor = "let workout of workoutList1" 
                 value = "{{workout.workoutID}}"> Name : {{workout.workoutName}}</option>
-            <option value = ""></option>
-            <option value = "">Moderate Intensity</option>
+            <option value = "{{nullID}}"></option>
+            <option value = "{{nullID}}">Moderate Intensity</option>
             <option *ngFor = "let workout of workoutList2"
                 value = "{{workout.workoutID}}">Name : {{workout.workoutName}}</option>
-            <option value = ""></option>
-            <option value = "">Heavy Intensity</option>
+            <option value = "{{nullID}}"></option>
+            <option value = "{{nullID}}">Heavy Intensity</option>
             <option *ngFor = "let workout of workoutList3"
                 value = "{{workout.workoutID}}">Name : {{workout.workoutName}}</option>
         </select>
         <br>
         <br>
-        <button id = "button3" (click)="deleteWorkout()">Add Exercises</button>
+        <button id = "button3" (click)="addExercise()">Add Exercises</button>
         <br>
  
     </div>

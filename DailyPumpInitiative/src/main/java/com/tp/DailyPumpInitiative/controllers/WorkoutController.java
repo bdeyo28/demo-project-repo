@@ -24,8 +24,8 @@ public class WorkoutController {
     @GetMapping("/workout/{workoutID}")
     public ResponseEntity selectWorkout(@PathVariable Integer workoutID) {
         try {
-            return ResponseEntity.ok(service.getExerciseList(workoutID));
-        } catch (NullExerciseException | NullWorkoutException | InvalidInputException ex) {
+            return ResponseEntity.ok(service.getWorkoutByID(workoutID));
+        } catch (NullWorkoutException | InvalidInputException ex) {
             return ResponseEntity.badRequest().body(ex.getMessage());
         }
     }
