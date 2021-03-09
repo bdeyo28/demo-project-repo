@@ -107,4 +107,9 @@ public class ExerciseInMemDao implements ExerciseDao {
         return null;
     }
 
+    @Override
+    public void deleteExercisesFromWorkout(Integer workoutID) {
+
+    }
+
 }

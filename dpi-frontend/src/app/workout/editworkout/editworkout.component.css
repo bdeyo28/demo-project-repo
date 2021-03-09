@@ -5,7 +5,7 @@
     width: 100%;
     color: whitesmoke;
     font-size: x-large;
-    text-shadow: 5px 5px 5px  black;
+    text-shadow: 10px 10px 10px  black;
     border: 5px solid gray;
     background: rgba(47, 79, 79, 0.486);
     margin-right: 200px;
@@ -22,7 +22,24 @@
     width: 100%;
     color: whitesmoke;
     font-size: x-large;
-    text-shadow: 5px 5px 5px  black;
+    text-shadow: 10px 10px 10px  black;
+    border: 5px solid gray;
+    background: rgba(128, 0, 13, 0.486);
+    margin-right: 200px;
+    margin-left: 200px;
+    margin-top: 5px;
+    padding-bottom: 50px;
+    
+  }
+
+  #deleteExercise {
+    margin: auto;
+    text-align: center;
+    height: 50%;
+    width: 100%;
+    color: whitesmoke;
+    font-size: x-large;
+    text-shadow: 10px 10px 10px  black;
     border: 5px solid gray;
     background: rgba(128, 0, 13, 0.486);
     margin-right: 200px;
@@ -40,9 +57,9 @@
     width: 100%;
     color: whitesmoke;
     font-size: x-large;
-    text-shadow: 5px 5px 5px  black;
+    text-shadow: 10px 10px 10px  black;
     border: 5px solid gray;
-    background: rgba(20, 20, 20, 0.486);
+    background: rgba(47, 79, 79, 0.486);
     margin-right: 200px;
     margin-left: 200px;
     margin-top: 5px;
@@ -90,7 +107,7 @@ button {
 }
 
 #button3:hover {
-  background-color: rgba(20, 20, 20, 1);
+  background-color: darkslategray;
   color: white;
 }
 

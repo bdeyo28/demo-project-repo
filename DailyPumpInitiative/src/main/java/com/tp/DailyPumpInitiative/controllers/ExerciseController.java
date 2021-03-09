@@ -59,7 +59,23 @@ public class ExerciseController {
         } catch (InvalidInputException e) {
             e.getMessage();
         }
+    }
 
+    @DeleteMapping("/deleteWorkoutExercises/{workoutID}")
+    public void deleteExercisesFromWorkout(@PathVariable Integer workoutID)
+    {
+        try {
+            service.deleteExercisesFromWorkout(workoutID);
+        } catch (NullExerciseException ex )
+        {
+            ex.getMessage();
+        } catch (InvalidInputException ex )
+        {
+            ex.getMessage();
+        } catch (NullWorkoutException ex )
+        {
+            ex.getMessage();
+        }
     }
 
     @PostMapping("/addToWorkout/{workoutID}")

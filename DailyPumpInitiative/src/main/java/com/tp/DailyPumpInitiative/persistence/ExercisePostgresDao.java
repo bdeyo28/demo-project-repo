@@ -112,4 +112,9 @@ public class ExercisePostgresDao implements ExerciseDao {
         return toAdd;
     }
 
+    @Override
+    public void deleteExercisesFromWorkout(Integer workoutID) {
+        template.execute("DELETE from \"Exercise\" where \"workoutID\" = "+workoutID+";");
+    }
+
 }

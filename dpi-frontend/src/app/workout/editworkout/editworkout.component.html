@@ -62,6 +62,7 @@
 
     <div id="deleteWorkout"> <!-- header2 -->
         <h1>Delete A Workout By Name</h1>
+        <h4>*Note: Deleting a Workout Will Also Delete Associated Exercises*</h4>
         <h3>Select Workout</h3> <!-- TODO // SET UP A DROP DOWN FOR ALL ID'S AND CORRESPONDING NAMES-->
 
         <select [(ngModel)] = "deleteWorkoutID" style = "width: 500px">
@@ -91,6 +92,33 @@
             (click) = "resetDelete()">Reset</button> -->
 
     </div>
+
+    <br>
+    <br>
+
+    <div id="deleteExercise"> <!-- header2 -->
+        <h1>Delete An Exercise By Name</h1>
+        <h4>*Note: Deleting an Exercise Will Remove It From All Associated Workouts*</h4>
+        <h3>Select Exercise</h3> <!-- TODO // SET UP A DROP DOWN FOR ALL ID'S AND CORRESPONDING NAMES-->
+
+        <select [(ngModel)] = "deleteExerciseID" style = "width: 500px">
+            <option [ngValue] = "null"></option>
+            <option *ngFor = "let exercise of exerciseList" [ngValue] = "exercise.exerciseID">Name: {{exercise.exerciseName}}</option>
+        </select>
+
+        <!-- <input style = "width: 300px" type = "number" [(ngModel)] = "workoutID" placeholder="Enter ID Here:"> -->
+        <br>
+        <br>
+        <button id = "button2" (click)="deleteExercise()">Delete Exercise</button>
+        <br>
+
+        <!-- <h3 id = "errorDisplay" style = "display: none;">*You Must Select A Valid Input*</h3>
+ 
+        <button id = "reset" style = "display: none; width: 300px" 
+            (click) = "resetDelete()">Reset</button> -->
+
+    </div>
+
 
     <!-- <app-exercise *ngFor="let i of exerciseList" [exercise]="i"></app-exercise> -->
 

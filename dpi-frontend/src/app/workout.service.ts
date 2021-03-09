@@ -5,6 +5,7 @@ import {of} from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Workout } from './Workout';
 import { ActivatedRoute } from '@angular/router';
+import { Exercise } from './Exercise';
 
 @Injectable({
   providedIn: 'root'
@@ -49,6 +50,17 @@ export class WorkoutService {
         return of(null);
       })
     );
+  }
+
+  deleteExercisesFromWorkout(id : number) : Observable<Exercise[]> {
+    return this.http.delete<Exercise[]>(this.baseURL + "/deleteWorkoutExercises/" + id)
+    .pipe(
+      tap(x => console.log(x)),
+      catchError(err => {
+        console.log(err);
+        return of(null);
+      })
+    ); 
   }
 
   getWorkoutList(id : number) : Observable<Workout[]> {

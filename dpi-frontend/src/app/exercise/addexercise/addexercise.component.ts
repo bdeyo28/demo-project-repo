@@ -13,7 +13,8 @@ import { WorkoutService } from 'src/app/workout.service';
 })
 export class AddexerciseComponent implements OnInit {
 
-  nullID : number = 0;
+  nullID: number = 0;
+  newExercise: Exercise;
 
   selectedWorkout: Workout;
   workoutID: number;
@@ -28,7 +29,8 @@ export class AddexerciseComponent implements OnInit {
   isComplete: boolean;
 
   selectExercise: Exercise;
-  exerciseList : Exercise[];
+  exerciseList: Exercise[];
+  selectList: Exercise[];
 
   thisDiv: any = document.getElementById("exerciseAdded");
 
@@ -36,7 +38,9 @@ export class AddexerciseComponent implements OnInit {
     private exService: ExerciseService,
     private activatedRoute: ActivatedRoute,
     private sanitizer: DomSanitizer,
-    private router: Router) { }
+    private router: Router) {
+
+  }
 
   ngOnInit(): void {
 
@@ -46,19 +50,24 @@ export class AddexerciseComponent implements OnInit {
 
     this.wkService.getWorkoutByID(this.workoutID).subscribe(workout => { this.selectedWorkout = workout; });
 
-    this.exService.getAllExercises().subscribe(list => {this.exerciseList = list});
+    this.exService.getAllExercises().subscribe(list => {
+      this.exerciseList = list;
+
+      this.exerciseList = this.exerciseList.filter((v, i, a) =>
+        a.findIndex(t => (t.exerciseName === v.exerciseName && t.exerciseName === v.exerciseName)) === i)
+
+    });
 
   }
 
   addExistingExercise() {
-    if (this.selectExercise === null)
-    {
+    if (this.selectExercise === null) {
       alert("Please choose a valid exercise selection.")
       return;
     }
-    
-    this.exService.addExerciseToWorkout(this.selectExercise, this.workoutID).subscribe((_) => 
-                this.router.navigate(["addExercise/" + this.workoutID]));
+
+    this.exService.addExerciseToWorkout(this.selectExercise, this.workoutID).subscribe((_) =>
+      this.router.navigate(["addExercise/" + this.workoutID]));
 
   }
 
@@ -70,6 +79,12 @@ export class AddexerciseComponent implements OnInit {
     if (this.name === undefined || this.sets === undefined || this.reps === undefined
       || this.bodyweight === undefined || this.urlPath === undefined) {
       alert("Please make sure to fill in all required values.");
+      return;
+    }
+
+    if (this.bodyweight == false && this.weight === undefined)
+    {
+      alert("Bodyweight cannot be false while weight is undefined.");
       return;
     }
 
