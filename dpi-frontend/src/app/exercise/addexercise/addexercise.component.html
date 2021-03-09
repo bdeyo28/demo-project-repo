@@ -5,7 +5,7 @@
         <h1>{{selectedWorkout.workoutName}}</h1>
         <h4>*Enter Exercises One At A Time*</h4>
 
-        <h4>Exercise Name:</h4>
+        <h4>Exercise Name (Required)</h4>
         <input style="width: 300px" type="text" [(ngModel)]="name" placeholder="Enter Exercise Name Here : ">
         <br>
 
@@ -13,7 +13,7 @@
         <input style="width: 300px" type="text" [(ngModel)]="description" placeholder="Enter Description Here : ">
         <br>
 
-        <h4>Enter # of Sets</h4>
+        <h4>Enter # of Sets (Required)</h4>
         <select style="width: 50px" [(ngModel)] = "sets">
             <option value = 1>1</option>
             <option value = 2>2</option>
@@ -23,7 +23,7 @@
         </select>
         <br>
 
-        <h4>Enter # of Reps</h4>
+        <h4>Enter # of Reps (Required)</h4>
         <input style = "width: 300px;" type = "text" [(ngModel)] = "reps" placeholder="Enter Rep Range Here : ">
         <br>
 
@@ -31,14 +31,14 @@
         <input style = "width: 300px;" type = "text" [(ngModel)] = "weight" placeholder="Enter Weight Range Here : ">
         <br>
 
-        <h4>Is This A Bodyweight Exercise?</h4>
+        <h4>Is This A Bodyweight Exercise? (Required)</h4>
         <select style= "width: 100px" [(ngModel)] = "bodyweight">
             <option value = true>Yes</option>
             <option value = false>No</option>
         </select>
         <br>
 
-        <h4>Add A YouTube Link For Video</h4>
+        <h4>Add A YouTube Link For Video (Required)</h4>
         <input style = "width: 300px;" type = "text" [(ngModel)] = "urlPath" placeholder="Paste Link Here : ">
         <br>
         <br>
@@ -46,7 +46,7 @@
         <button id="button1" (click)="addExercise()">Add Exercise</button>
         <br>
         <br>
-        <div style = "display: none;" id = "exerciseAdded">Exercises Added : </div>
+        <div style = "display: none;" id = "exerciseAdded">--Exercises Added--</div>
 
     </div>
 
