@@ -97,4 +97,14 @@ public class ExerciseInMemDao implements ExerciseDao {
         return null;
     }
 
+    @Override
+    public List<Exercise> getAllExercises() {
+        return null;
+    }
+
+    @Override
+    public Exercise addExerciseToWorkout(Exercise toAdd, Integer workoutID) {
+        return null;
+    }
+
 }

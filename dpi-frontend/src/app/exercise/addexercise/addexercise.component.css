@@ -12,10 +12,34 @@
     margin-left: 200px;
     margin-top: 100px;
     padding-bottom: 50px;
+  }
+
+  #addExistingExercises {
+    margin: auto;
+    text-align: center;
+    height: 50%;
+    width: 100%;
+    color: whitesmoke;
+    font-size: x-large;
+    text-shadow: 5px 5px 5px  black;
+    border: 5px solid gray;
+    background: rgba(47, 79, 79, 0.486);
+    margin-right: 200px;
+    margin-left: 200px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    padding-bottom: 50px;
     margin-bottom: 100px;
     
   }
 
+#exerciseSelect {
+    width: 300px;
+    height: 40px;
+    font-size: 20px;
+}
+
+  
   body {
     display: flex;
     text-align: center;

@@ -3,7 +3,7 @@
     <div id="addExercises">
         <!-- header1 -->
         <h1>{{selectedWorkout.workoutName}}</h1>
-        <h4>*Enter Exercises One At A Time*</h4>
+        <h4>*Enter New Exercises One At A Time*</h4>
 
         <h4>Exercise Name (Required)</h4>
         <input style="width: 300px" type="text" [(ngModel)]="name" placeholder="Enter Exercise Name Here : ">
@@ -47,6 +47,21 @@
         <br>
         <br>
         <div style = "display: none;" id = "exerciseAdded">--Exercises Added--</div>
+
+    </div>
+
+    <div id = "addExistingExercises">
+        <h1>{{selectedWorkout.workoutName}}</h1>
+        <h4>*Choose An Existing Exercise To Add*</h4>
+
+        <select id = "exerciseSelect" [(ngModel)] = "selectExercise">
+            <option [ngValue] = "null"></option>
+            <option *ngFor = "let exercise of exerciseList" [ngValue] = "exercise">Name: {{exercise.exerciseName}}</option>
+        </select>
+        <br>
+        <br>
+        
+        <button id = "button1" (click) = "addExistingExercise()">Add Exercise</button>
 
     </div>
 

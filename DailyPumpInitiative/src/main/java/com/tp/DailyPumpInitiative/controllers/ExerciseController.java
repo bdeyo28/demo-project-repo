@@ -27,6 +27,17 @@ public class ExerciseController {
         }
     }
 
+    @GetMapping("/allExercises")
+    public ResponseEntity getAllExercises()
+    {
+        try {
+            return ResponseEntity.ok(service.getAllExercises());
+        } catch (NullExerciseException | InvalidInputException ex)
+        {
+            return ResponseEntity.badRequest().body(ex.getMessage());
+        }
+    }
+
     @GetMapping("/getExercise/{exerciseID}")
     public ResponseEntity getExerciseByID(@PathVariable Integer exerciseID)
     {
@@ -49,6 +60,27 @@ public class ExerciseController {
             e.getMessage();
         }
 
+    }
+
+    @PostMapping("/addToWorkout/{workoutID}")
+    public ResponseEntity addExerciseToWorkout(@RequestBody Exercise toAdd,
+                                               @PathVariable Integer workoutID)
+    {
+        Exercise toReturn = null;
+        try {
+            toReturn = service.addExerciseToWorkout(toAdd, workoutID);
+        } catch (NullExerciseException ex)
+        {
+            ex.getMessage();
+        } catch (NullWorkoutException ex)
+        {
+            ex.getMessage();
+        } catch (InvalidInputException ex)
+        {
+            ex.getMessage();
+        }
+
+        return ResponseEntity.ok(toReturn);
     }
 
     @PostMapping("/addExercise")

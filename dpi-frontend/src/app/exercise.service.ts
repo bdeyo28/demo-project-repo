@@ -17,6 +17,17 @@ export class ExerciseService {
 
   constructor(private http : HttpClient) { }
 
+  getAllExercises() : Observable<Exercise[]> {
+    return this.http.get<Exercise[]>(this.baseURL + "/allExercises")
+    .pipe(
+      tap(x => console.log(x)),
+      catchError(err => {
+        console.log(err);
+        return of(null);
+      })
+    );
+  }
+
   getExerciseList(id : number) : Observable<Exercise[]> {
     return this.http.get<Exercise[]>(this.baseURL + "/exercises/" + id)
     .pipe(
@@ -37,6 +48,18 @@ export class ExerciseService {
         return of(null);
       })
     );;
+  }
+
+  addExerciseToWorkout(toAdd : Exercise, id : number) : Observable<Exercise>
+  {
+    return this.http.post<Exercise>(this.baseURL+ "/addToWorkout/" + id, toAdd, this.httpOptions)
+    .pipe(
+      tap(x => console.log(x)),
+      catchError(err => {
+        console.log(err);
+        return of(null);
+      })
+    );
   }
 
   addExercise(toAdd : Exercise) : Observable<Exercise> {

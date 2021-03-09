@@ -14,4 +14,8 @@ public interface ExerciseDao {
 
     Exercise addExerciseToList(Exercise toAdd);
 
+    List<Exercise> getAllExercises();
+
+    Exercise addExerciseToWorkout(Exercise toAdd, Integer workoutID);
+
 }

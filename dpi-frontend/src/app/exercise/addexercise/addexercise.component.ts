@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Exercise } from 'src/app/Exercise';
@@ -13,6 +13,8 @@ import { WorkoutService } from 'src/app/workout.service';
 })
 export class AddexerciseComponent implements OnInit {
 
+  nullID : number = 0;
+
   selectedWorkout: Workout;
   workoutID: number;
   name: string;
@@ -25,7 +27,10 @@ export class AddexerciseComponent implements OnInit {
   urlPath: string;
   isComplete: boolean;
 
-  thisDiv : any = document.getElementById("exerciseAdded");
+  selectExercise: Exercise;
+  exerciseList : Exercise[];
+
+  thisDiv: any = document.getElementById("exerciseAdded");
 
   constructor(private wkService: WorkoutService,
     private exService: ExerciseService,
@@ -40,6 +45,21 @@ export class AddexerciseComponent implements OnInit {
 
 
     this.wkService.getWorkoutByID(this.workoutID).subscribe(workout => { this.selectedWorkout = workout; });
+
+    this.exService.getAllExercises().subscribe(list => {this.exerciseList = list});
+
+  }
+
+  addExistingExercise() {
+    if (this.selectExercise === null)
+    {
+      alert("Please choose a valid exercise selection.")
+      return;
+    }
+    
+    this.exService.addExerciseToWorkout(this.selectExercise, this.workoutID).subscribe((_) => 
+                this.router.navigate(["addExercise/" + this.workoutID]));
+
   }
 
 
@@ -47,20 +67,18 @@ export class AddexerciseComponent implements OnInit {
 
     // https://www.youtube.com/watch?v=r8NaWdh8jyE
 
-    if (this.name === undefined || this.sets === undefined || this.reps === undefined 
-        || this.bodyweight === undefined || this.weight === undefined || this.urlPath === undefined)
-        {
-           alert("Please make sure to fill in all non-optional values.");
-           return;
-        }
-
-    if (!this.urlPath.includes("www.youtube.com"))
-    {
-        alert("Please enter a YouTube link.");
-        return;
+    if (this.name === undefined || this.sets === undefined || this.reps === undefined
+      || this.bodyweight === undefined || this.urlPath === undefined) {
+      alert("Please make sure to fill in all required values.");
+      return;
     }
 
-    let newPath : string = this.urlPath.replace("watch?v=", "embed/");
+    if (!this.urlPath.includes("www.youtube.com")) {
+      alert("Please enter a YouTube link.");
+      return;
+    }
+
+    let newPath: string = this.urlPath.replace("watch?v=", "embed/");
 
     let toAdd: Exercise = {
       exerciseName: this.name, workoutID: this.workoutID, exerciseDesc: this.description,

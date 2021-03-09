@@ -75,4 +75,41 @@ public class ExercisePostgresDao implements ExerciseDao {
         return toAdd;
     }
 
+    @Override
+    public List<Exercise> getAllExercises() {
+
+        List<Exercise> toReturn = template.query("SELECT * from \"Exercise\";",
+                new ExerciseMapper());
+        if (toReturn.isEmpty())
+            return null;
+
+        return toReturn;
+
+    }
+
+    @Override
+    public Exercise addExerciseToWorkout(Exercise toAdd, Integer workoutID) {
+
+        Integer exerciseID =
+                template.queryForObject("INSERT INTO \"Exercise\" \n" +
+                                "(\"workoutID\", \"name\", \"description\", \"bodyweight\", \"reps\", \"completed\", \"sets\", \"weight\", \"url\")\n" +
+                                "VALUES \n" +
+                                "("+workoutID+", ?, ?, ?, ?, ?, ?, ?, ?)\n" +
+                                "RETURNING *;",
+                new IntegerMapper("exerciseID"),
+                toAdd.getExerciseName(),
+                toAdd.getExerciseDesc(),
+                toAdd.isBodyweight(),
+                toAdd.getExerciseReps(),
+                toAdd.isComplete(),
+                toAdd.getExerciseSets(),
+                toAdd.getExerciseWeight(),
+                toAdd.getExerciseURL());
+
+        toAdd.setWorkoutID(workoutID);
+        toAdd.setExerciseID(exerciseID);
+
+        return toAdd;
+    }
+
 }

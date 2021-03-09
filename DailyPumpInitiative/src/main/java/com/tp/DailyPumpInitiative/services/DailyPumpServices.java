@@ -82,6 +82,12 @@ public class DailyPumpServices {
         return workoutDao.getExerciseList(workoutID);
     }
 
+    public List<Exercise> getAllExercises() throws NullExerciseException,
+            InvalidInputException
+    {
+        return exerciseDao.getAllExercises();
+    }
+
     public Exercise getExerciseByID(Integer exerciseID) throws NullExerciseException,
             InvalidInputException
     {
@@ -98,6 +104,12 @@ public class DailyPumpServices {
             InvalidInputException
     {
         return exerciseDao.addExerciseToList(toAdd);
+    }
+
+    public Exercise addExerciseToWorkout(Exercise toAdd, Integer workoutID) throws
+            NullExerciseException, NullWorkoutException, InvalidInputException
+    {
+        return exerciseDao.addExerciseToWorkout(toAdd, workoutID);
     }
 
 }
