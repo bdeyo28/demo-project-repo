@@ -28,6 +28,17 @@ export class ExerciseService {
     );
   }
 
+  editExerciseByID(toEdit : Exercise, id : number) : Observable<Exercise> {
+    return this.http.put<Exercise>(this.baseURL + "/editExercise/" + id, toEdit, this.httpOptions)
+    .pipe(
+      tap(x => console.log(x)),
+      catchError(err => {
+        console.log(err);
+        return of(null);
+      })
+    );
+  }
+
   getExerciseList(id : number) : Observable<Exercise[]> {
     return this.http.get<Exercise[]>(this.baseURL + "/exercises/" + id)
     .pipe(
@@ -83,17 +94,5 @@ export class ExerciseService {
       })
     );
   }
-
-  // getIsCompleted() : Observable<boolean> {
-  //   return this.http.get<boolean>(this.baseURL + "/exercise/{exerciseID}")
-  //   .pipe(
-  //     tap(x => console.log(x)),
-  //     catchError(err => {
-  //       console.log(err);
-  //       return of(null);
-  //     })
-  //   );
-  // }
-
 
 }

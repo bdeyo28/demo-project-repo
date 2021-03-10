@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, NgModule } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators, NgForm } from '@angular/forms';
 import { HttpClientModule, HttpClient, HttpHeaders } from "@angular/common/http";
+import { formatCurrency } from '@angular/common';
 
 @Component({
   selector: 'app-contactpage',
@@ -28,8 +29,14 @@ export class ContactpageComponent implements OnInit {
         );
     }
 
-    document.getElementById("contactForm").innerHTML = "Thank You! Your message has been sent.";
+    document.getElementById("messageSent").innerHTML = "Thank You! Your message has been sent.";
+    this.clearForm();
 
+  }
+
+  clearForm()
+  {
+    (<HTMLFormElement>document.getElementById("contactForm")).reset();
   }
   
 }

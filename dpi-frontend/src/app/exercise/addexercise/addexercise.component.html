@@ -15,6 +15,7 @@
 
         <h4>Enter # of Sets (Required)</h4>
         <select style="width: 50px" [(ngModel)] = "sets">
+            <option [ngValue] = null></option>
             <option value = 1>1</option>
             <option value = 2>2</option>
             <option value = 3>3</option>
@@ -33,6 +34,7 @@
 
         <h4>Is This A Bodyweight Exercise? (Required)</h4>
         <select style= "width: 100px" [(ngModel)] = "bodyweight">
+            <option [ngValue] = null></option>
             <option [ngValue] = true>Yes</option>
             <option [ngValue] = false>No</option>
         </select>
@@ -46,7 +48,7 @@
         <button id="button1" (click)="addExercise()">Add Exercise</button>
         <br>
         <br>
-        <div style = "display: none;" id = "exerciseAdded">--Exercises Added--</div>
+        <div id = "exerciseAdded"></div>
 
     </div>
 
@@ -62,6 +64,9 @@
         <br>
         
         <button id = "button1" (click) = "addExistingExercise()">Add Exercise</button>
+        <br>
+        <br>
+        <div id  = "existingExerciseAdded"></div>
 
     </div>
 

@@ -19,6 +19,7 @@ export class EditworkoutComponent implements OnInit {
 
   @Input('ngModel') deleteWorkoutID: number;
   @Input('ngModel') deleteExerciseID: number;
+  @Input('ngModel') editExercise: Exercise;
   @Input('ngModel') workoutID: number;
   @Input('ngModel') name: string;
   @Input('ngModel') intensityID: number;
@@ -81,6 +82,13 @@ export class EditworkoutComponent implements OnInit {
   }
 
   addWorkout() {
+
+    if (this.intensityID == null)
+    {
+      alert("Please choose a valid Intensity Level");
+      return;
+    }
+
     let toAdd: Workout = {
       workoutName: this.name, intensityID: this.intensityID,
       workoutDescription: this.desc, isComplete: this.completed,
@@ -88,6 +96,12 @@ export class EditworkoutComponent implements OnInit {
     };
 
     this.wkService.addWorkout(toAdd).subscribe((_) => this.router.navigate(["editworkout"]));
+    let keepThis = document.getElementById("workoutAdded").innerHTML += `Added : ${toAdd.workoutName}` + "<br>";
+    this.name = '';
+    this.intensityID = null;
+    this.desc = '';
+    // this.reloadPageOnClick();
+
   }
 
   addExercise() {
@@ -108,10 +122,11 @@ export class EditworkoutComponent implements OnInit {
       return;
 
     }
-    this.wkService.deleteWorkout(this.deleteWorkoutID).subscribe((_) => this.router.navigate(["editworkout"]));
     this.deleteExercisesFromWorkout();
-    document.getElementById("deleteWorkout").innerHTML = "<br><br>" + "The requested workout has been deleted.";
-    document.getElementById("reset").style.display = "inline";
+    this.wkService.deleteWorkout(this.deleteWorkoutID).subscribe((_) => this.router.navigate(["editworkout"]));
+    this.wkService.getWorkoutByID(this.deleteWorkoutID).subscribe(workout => {
+      document.getElementById("workoutDeleted").innerHTML += `Removed: ${workout.workoutName}` + "<br>";
+    });
   }
 
   deleteExercisesFromWorkout() {
@@ -129,8 +144,28 @@ export class EditworkoutComponent implements OnInit {
     }
 
     this.exService.deleteExerciseByID(this.deleteExerciseID).subscribe((_) => this.router.navigate(["editworkout"]));
-    document.getElementById("deleteExercise").innerHTML = "<br><br>" + "The requested exercise has been deleted.";
+    this.exService.getExerciseByID(this.deleteExerciseID).subscribe(exercise => {
+      document.getElementById("exerciseDeleted").innerHTML += `Removed: ${exercise.exerciseName}` + "<br>";
+    })
+  }
+
+  editExerciseByID() {
+    if (this.editExercise == null) {
+      alert("Please choose a valid exercise selection.")
+      return;
+    }
+
+    let id : number = this.editExercise.exerciseID;
+
+    this.exService.editExerciseByID(this.editExercise, id)
+                                    .subscribe((_) => this.router.navigate(["/editexercise/" + id]));
 
   }
+
+  reloadPageOnClick()
+  {
+    window.location.reload();
+  }
+
 
 }

@@ -1,117 +1,139 @@
 #addNewWorkout {
-    margin: auto;
-    text-align: center;
-    height: 50%;
-    width: 100%;
-    color: whitesmoke;
-    font-size: x-large;
-    text-shadow: 10px 10px 10px  black;
-    border: 5px solid gray;
-    background: rgba(47, 79, 79, 0.486);
-    margin-right: 200px;
-    margin-left: 200px;
-    margin-top: 100px;
-    padding-bottom: 50px;
-    
-  }
-
-  #deleteWorkout {
-    margin: auto;
-    text-align: center;
-    height: 50%;
-    width: 100%;
-    color: whitesmoke;
-    font-size: x-large;
-    text-shadow: 10px 10px 10px  black;
-    border: 5px solid gray;
-    background: rgba(128, 0, 13, 0.486);
-    margin-right: 200px;
-    margin-left: 200px;
-    margin-top: 5px;
-    padding-bottom: 50px;
-    
-  }
-
-  #deleteExercise {
-    margin: auto;
-    text-align: center;
-    height: 50%;
-    width: 100%;
-    color: whitesmoke;
-    font-size: x-large;
-    text-shadow: 10px 10px 10px  black;
-    border: 5px solid gray;
-    background: rgba(128, 0, 13, 0.486);
-    margin-right: 200px;
-    margin-left: 200px;
-    margin-top: 5px;
-    margin-bottom: 100px;
-    padding-bottom: 50px;
-    
-  }
-
-  #addExerciseToExistingWorkout {
-    margin: auto;
-    text-align: center;
-    height: 50%;
-    width: 100%;
-    color: whitesmoke;
-    font-size: x-large;
-    text-shadow: 10px 10px 10px  black;
-    border: 5px solid gray;
-    background: rgba(47, 79, 79, 0.486);
-    margin-right: 200px;
-    margin-left: 200px;
-    margin-top: 5px;
-    padding-bottom: 50px;
-    
-  }
+  margin: auto;
+  text-align: center;
+  height: 50%;
+  width: 100%;
+  color: whitesmoke;
+  font-size: x-large;
+  text-shadow: 10px 10px 10px  black;
+  border: 5px solid gray;
+  background: linear-gradient(to right bottom, dimgray, black, darkslategray, black,  dimgray);
+  opacity: .8;
+  margin-right: 200px;
+  margin-left: 200px;
+  margin-top: 100px;
+  padding-bottom: 50px;
   
+}
+
+#deleteWorkout {
+  margin: auto;
+  text-align: center;
+  height: 50%;
+  width: 100%;
+  color: whitesmoke;
+  font-size: x-large;
+  text-shadow: 10px 10px 10px  black;
+  border: 5px solid gray;
+  background: linear-gradient(to right bottom, dimgray, black, #800000, black,  dimgray);
+  opacity: .8;
+  margin-right: 200px;
+  margin-left: 200px;
+  margin-top: 5px;
+  padding-bottom: 50px;
   
-    body {
-      display: flex;
-      text-align: center;
-      align-items: center;
-      flex-wrap: wrap;
-      min-height: 100vh;
-      background-image: url('/assets/dudesitting.jpg');
-      background-size: cover;
-      background-attachment: fixed;
-  }
+}
+
+#editExercise {
+  margin: auto;
+  text-align: center;
+  height: 50%;
+  width: 100%;
+  color: whitesmoke;
+  font-size: x-large;
+  text-shadow: 10px 10px 10px  black;
+  border: 5px solid gray;
+  background: linear-gradient(to right bottom, dimgray, black, dimgray, black,  dimgray);
+  opacity: .8;
+  margin-right: 200px;
+  margin-left: 200px;
+  margin-top: 5px;
+  padding-bottom: 50px;
+  
+}
+
+#deleteExercise {
+  margin: auto;
+  text-align: center;
+  height: 50%;
+  width: 100%;
+  color: whitesmoke;
+  font-size: x-large;
+  text-shadow: 10px 10px 10px  black;
+  border: 5px solid gray;
+  background: linear-gradient(to right bottom, dimgray, black, #800000, black,  dimgray);
+  opacity: .8;
+  margin-right: 200px;
+  margin-left: 200px;
+  margin-top: 5px;
+  margin-bottom: 100px;
+  padding-bottom: 50px;
+  
+}
+
+#addExerciseToExistingWorkout {
+  margin: auto;
+  text-align: center;
+  height: 50%;
+  width: 100%;
+  color: whitesmoke;
+  font-size: x-large;
+  text-shadow: 10px 10px 10px  black;
+  border: 5px solid gray;
+  background: linear-gradient(to right bottom, dimgray, black, darkslategray, black, dimgray);
+  opacity : .8;
+  margin-right: 200px;
+  margin-left: 200px;
+  margin-top: 5px;
+  padding-bottom: 50px;
+  
+}
+
+
+  body {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    background-image: url('/assets/dudesitting.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
 
 select {
-    width: 150px;
-    height: 40px;
-    font-size: 20px;
+  width: 150px;
+  height: 40px;
+  font-size: 20px;
 }
 
 input {
-  font-size: 20px;
-  text-align: center;
+font-size: 20px;
+text-align: center;
 }
 
 button {
-    text-align: center;
-    height: 30px;
-    width: 120px;
-  }
+  text-align: center;
+  height: 30px;
+  width: 120px;
+}
 
 #button1:hover {
-  background-color: darkslategray;
-  color: white;
+background-color: darkslategray;
+color: white;
 }
 
 #button2:hover {
-  background-color: #800000;
-  color: white;
+background-color: #800000;
+color: white;
 }
 
 #button3:hover {
-  background-color: darkslategray;
-  color: white;
+background-color: darkslategray;
+color: white;
 }
 
 #resetButton:hover {
-  background-color: #800000;
-  color: white;
+background-color: #800000;
+color: white;
 }

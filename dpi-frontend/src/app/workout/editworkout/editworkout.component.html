@@ -1,7 +1,7 @@
 
 <body>
 
-    <div id="addNewWorkout"> <!-- header1 -->
+    <div id="addNewWorkout"> 
         <h1>Add A Workout</h1>
         <h3>Workout Name:</h3>
         <input style = "width: 300px" 
@@ -11,6 +11,7 @@
         <br>
         <h3>Intensity Level</h3>
         <select [(ngModel)] = "intensityID" ngOptions = "let intensity in intensityList">
+            <option [ngValue] = "null"></option>
             <option value = "1">{{intensity1}}</option>
             <option value = "2">{{intensity2}}</option>
             <option value = "3">{{intensity3}}</option>
@@ -26,7 +27,7 @@
         <button id = "button1" (click)="addWorkout()">Add Workout</button>
         <br>
         <br>
-        <div style = "display: none; " id = "workoutAdded">--Workouts Added--</div>
+        <div id = "workoutAdded"></div>
 
     </div>
 
@@ -60,6 +61,28 @@
     <br>
     <br>
 
+    <div id="editExercise"> <!-- header2 -->
+        <h1>Select An Exercise To Edit</h1>
+        <h4>*Note: Editing An Exercise Will Update For Each Workout Associated*</h4>
+        <h3>Select Exercise</h3> <!-- TODO // SET UP A DROP DOWN FOR ALL ID'S AND CORRESPONDING NAMES-->
+
+        <select [(ngModel)] = "editExercise" style = "width: 500px">
+            <option [ngValue] = "null"></option>
+            <option *ngFor = "let exercise of exerciseList" 
+                    [ngValue] = "exercise">Name: {{exercise.exerciseName}}</option>
+        </select>
+
+        <!-- <input style = "width: 300px" type = "number" [(ngModel)] = "workoutID" placeholder="Enter ID Here:"> -->
+        <br>
+        <br>
+        <button id = "button2" (click)="editExerciseByID()">Edit Exercise</button>
+        <br>
+
+    </div>
+
+    <br>
+    <br>
+
     <div id="deleteWorkout"> <!-- header2 -->
         <h1>Delete A Workout By Name</h1>
         <h4>*Note: Deleting a Workout Will Also Delete Associated Exercises*</h4>
@@ -85,6 +108,8 @@
         <br>
         <button id = "button2" (click)="deleteWorkout()">Delete Workout</button>
         <br>
+        <br>
+        <div id = "workoutDeleted"></div>
 
         <!-- <h3 id = "errorDisplay" style = "display: none;">*You Must Select A Valid Input*</h3>
  
@@ -111,6 +136,8 @@
         <br>
         <button id = "button2" (click)="deleteExercise()">Delete Exercise</button>
         <br>
+        <br>
+        <div id = "exerciseDeleted"></div>
 
         <!-- <h3 id = "errorDisplay" style = "display: none;">*You Must Select A Valid Input*</h3>
  

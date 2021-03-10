@@ -69,6 +69,9 @@ export class AddexerciseComponent implements OnInit {
     this.exService.addExerciseToWorkout(this.selectExercise, this.workoutID).subscribe((_) =>
       this.router.navigate(["addExercise/" + this.workoutID]));
 
+    document.getElementById("existingExerciseAdded").innerHTML += `Added: ${this.selectExercise.exerciseName}` + "<br>";
+    this.selectExercise = null;
+
   }
 
 
@@ -76,7 +79,7 @@ export class AddexerciseComponent implements OnInit {
 
     // https://www.youtube.com/watch?v=r8NaWdh8jyE
 
-    if (this.name === undefined || this.sets === undefined || this.reps === undefined
+    if (this.name === undefined || this.sets == null || this.reps === undefined
       || this.bodyweight === undefined || this.urlPath === undefined) {
       alert("Please make sure to fill in all required values.");
       return;
@@ -103,8 +106,13 @@ export class AddexerciseComponent implements OnInit {
 
     this.exService.addExercise(toAdd).subscribe((_) => this.router.navigate(["addExercise/" + this.workoutID]));
 
-    // this.thisDiv.append('<br><li>' + this.name + '</li>');
-
+    document.getElementById("exerciseAdded").innerHTML += `Added: ${toAdd.exerciseName}` + "<br>";
+    this.name = '';
+    this.sets = null;
+    this.reps = '';
+    this.bodyweight = null;
+    this.weight = '';
+    this.urlPath = '';
 
   }
 
