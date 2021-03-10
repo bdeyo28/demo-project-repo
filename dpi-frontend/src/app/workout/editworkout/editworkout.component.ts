@@ -133,6 +133,4 @@ export class EditworkoutComponent implements OnInit {
 
   }
 
-
-
 }
