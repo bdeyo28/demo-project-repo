@@ -7,11 +7,11 @@
   font-size: x-large;
   text-shadow: 5px 5px 5px  black;
   border: 5px solid gray;
-  background: linear-gradient(to right bottom, dimgray, black, dimgray, black,  dimgray);
+  background: linear-gradient(to right bottom, dimgray, black, darkslategray, black,  dimgray);
   opacity: .8;
   margin-right: 200px;
   margin-left: 200px;
-  margin-top: 100px;
+  margin-top: 50px;
   padding-bottom: 50px;
 }
 
@@ -24,7 +24,7 @@
   font-size: x-large;
   text-shadow: 5px 5px 5px  black;
   border: 5px solid gray;
-  background: linear-gradient(to right bottom, dimgray, black, dimgray, black,  dimgray);
+  background: linear-gradient(to right bottom, dimgray, black, darkslategray, black,  dimgray);
   opacity: .8;
   margin-right: 200px;
   margin-left: 200px;
@@ -60,7 +60,7 @@ body {
 }
 
 #button1:hover {
-background-color: black;
+background-color: darkslategray;
 color: whitesmoke;
 }
 

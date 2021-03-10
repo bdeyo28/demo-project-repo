@@ -158,7 +158,7 @@ export class EditworkoutComponent implements OnInit {
     let id : number = this.editExercise.exerciseID;
 
     this.exService.editExerciseByID(this.editExercise, id)
-                                    .subscribe((_) => this.router.navigate(["/editexercise/" + id]));
+                                    .subscribe((_) => this.router.navigate(["/editExercise/" + id]));
 
   }
 

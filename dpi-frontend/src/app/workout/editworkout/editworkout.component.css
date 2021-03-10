@@ -133,6 +133,11 @@ background-color: darkslategray;
 color: white;
 }
 
+#button5:hover {
+  background-color: dimgray;
+  color: white;
+}
+
 #resetButton:hover {
 background-color: #800000;
 color: white;

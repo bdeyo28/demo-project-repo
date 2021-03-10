@@ -21,6 +21,9 @@ body {
     margin-right: 300px;
     color: whitesmoke;
     padding-top: 40px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+    padding-left: 50px;
     background: linear-gradient(to right bottom, dimgray, darkslategray, black, darkslategray, black, darkslategray, dimgray);
     opacity: .9;
 }
@@ -31,9 +34,10 @@ body {
     width: 300px;
 }
 
+
 #contactForm textarea {
     margin-bottom: 25px;
-    height: 100px;
+    height: 200px;
     width: 300px;
 }
 

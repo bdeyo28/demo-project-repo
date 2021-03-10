@@ -1,0 +1,60 @@
+<body>
+
+    <div id="editExercise">
+        <!-- header2 -->
+        <h1>Enter New Exercise Values For -- {{selectedExercise.exerciseName}}</h1> <!-- TODO // SET UP A DROP DOWN FOR ALL ID'S AND CORRESPONDING NAMES-->
+
+        <h2>Exercise Name (Required)</h2>
+        <h4>Current Name: {{selectedExercise.exerciseName}}</h4>
+        <input style="width: 300px" type="text" [(ngModel)]="name" placeholder="Enter Exercise Name Here : ">
+        <br>
+
+        <h2>Description (Optional)</h2>
+        <h4>Current Description: {{isDesc}}</h4>
+        <input style="width: 300px" type="text" [(ngModel)]="description" placeholder="Enter Description Here : ">
+        <br>
+
+        <h2>Enter # of Sets (Required)</h2>
+        <h4>Current # of Sets: {{selectedExercise.exerciseSets}}</h4>
+        <select style="width: 50px" [(ngModel)]="sets">
+            <option [ngValue]=null></option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+        </select>
+        <br>
+
+        <h2>Enter # of Reps (Required)</h2>
+        <h4>Current # of Reps: {{selectedExercise.exerciseReps}}</h4>
+        <input style="width: 300px;" type="text" [(ngModel)]="reps" placeholder="Enter Rep Range Here : ">
+        <br>
+
+        <h2>Enter Weight Range (Optional if Bodyweight Exercise)</h2>
+        <h4>Current Weight Range: {{isWeighted}}</h4>
+        <input style="width: 300px;" type="text" [(ngModel)]="weight" placeholder="Enter Weight Range Here : ">
+        <br>
+
+        <h2>Is This A Bodyweight Exercise? (Required)</h2>
+        <h4>Current: {{isBodyweight}}</h4>
+        <select style="width: 100px" [(ngModel)]="bodyweight">
+            <option [ngValue]=null></option>
+            <option [ngValue]=true>Yes</option>
+            <option [ngValue]=false>No</option>
+        </select>
+        <br>
+
+        <h2>Add A YouTube Link For Video (Required)</h2>
+        <h4>Current Video URL: {{selectedExercise.exerciseURL}}</h4>
+        <input style="width: 300px;" type="text" [(ngModel)]="urlPath" placeholder="Paste Link Here : ">
+        <br>
+        <br>
+
+        <button id="button1" (click)="editThisExercise()">Edit Exercise</button>
+        <br>
+        <br>
+
+    </div>
+
+</body>

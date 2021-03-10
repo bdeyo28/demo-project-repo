@@ -19,6 +19,7 @@ import { CarouselComponent } from './homepage/carousel/carousel.component';
 import { ExercisedetailsComponent } from './exercise/exercisedetails/exercisedetails.component';
 import { EditworkoutComponent } from './workout/editworkout/editworkout.component';
 import { AddexerciseComponent } from './exercise/addexercise/addexercise.component';
+import { EditexerciseComponent } from './exercise/editexercise/editexercise.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { AddexerciseComponent } from './exercise/addexercise/addexercise.compone
     ExercisedetailsComponent,
     EditworkoutComponent,
     AddexerciseComponent,
+    EditexerciseComponent,
   ],
   imports: [
     BrowserModule,

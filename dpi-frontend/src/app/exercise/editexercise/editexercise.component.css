@@ -1,0 +1,57 @@
+#editExercise {
+    margin: auto;
+    text-align: center;
+    height: 50%;
+    width: 80%;
+    color: whitesmoke;
+    font-size: x-large;
+    text-shadow: 10px 10px 10px  black;
+    border: 5px solid gray;
+    background: linear-gradient(to right bottom, dimgray, black, darkslategray, black,  dimgray);
+    opacity: .8;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    
+  }
+
+body {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    background-image: url('/assets/peopleworkingout.jpeg');
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  
+li {
+  text-shadow: 10px 10px 10px black;
+}
+
+select {
+  width: 150px;
+  height: 40px;
+  font-size: 20px;
+  }
+  
+input {
+  font-size: 20px;
+  text-align: center;
+  }
+
+#button1 {
+    height: 50px;
+    width: 150px;
+    font-size: large;
+  }
+  
+#button1:hover {
+  background-color: black;
+  color: whitesmoke;
+  }
+
+h4 {
+  color: red;
+  text-shadow: 10px 10px 10px black;
+}
