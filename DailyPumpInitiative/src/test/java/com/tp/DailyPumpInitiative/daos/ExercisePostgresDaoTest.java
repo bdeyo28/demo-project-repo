@@ -2,6 +2,7 @@ package com.tp.DailyPumpInitiative.daos;
 
 import com.tp.DailyPumpInitiative.models.Exercise;
 import com.tp.DailyPumpInitiative.persistence.ExercisePostgresDao;
+import com.tp.DailyPumpInitiative.persistence.WorkoutPostgresDao;
 import com.tp.DailyPumpInitiative.persistence.mappers.BooleanMapper;
 import com.tp.DailyPumpInitiative.persistence.mappers.ExerciseMapper;
 import com.tp.DailyPumpInitiative.persistence.mappers.WorkoutMapper;
@@ -23,6 +24,9 @@ public class ExercisePostgresDaoTest {
 
     @Autowired
     ExercisePostgresDao toTest;
+
+    @Autowired
+    WorkoutPostgresDao wkTest;
 
     @Autowired
     JdbcTemplate template;
@@ -102,6 +106,16 @@ public class ExercisePostgresDaoTest {
 //        assertFalse(newList.get(0).isComplete());
 //        assertTrue(newList.get(1).isComplete());
 //        assertFalse(newList.get(2).isComplete());
+    }
+
+    @Test
+    public void deleteExerciseByIDGoldenPath()
+    {
+//        toTest.deleteExerciseByID(2);
+//
+//        List thisList = wkTest.getExerciseList(3);
+//
+//        assertEquals(2, wkTest.getExerciseList(3).size());
     }
 
 }

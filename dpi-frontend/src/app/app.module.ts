@@ -20,6 +20,10 @@ import { ExercisedetailsComponent } from './exercise/exercisedetails/exercisedet
 import { EditworkoutComponent } from './workout/editworkout/editworkout.component';
 import { AddexerciseComponent } from './exercise/addexercise/addexercise.component';
 import { EditexerciseComponent } from './exercise/editexercise/editexercise.component';
+import { MatIconModule } from '@angular/material/icon';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatMenuModule} from '@angular/material/menu'
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -44,7 +48,11 @@ import { EditexerciseComponent } from './exercise/editexercise/editexercise.comp
     HttpClientModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    MatIconModule,
+    MatMenuModule,
+    MatButtonModule,
+    BrowserAnimationsModule
   ],
   providers: [
     ContactService

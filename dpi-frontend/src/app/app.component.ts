@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import {MatMenuModule, MatMenuTrigger, MatMenu} from '@angular/material/menu';
+import {MatIconModule} from '@angular/material/icon';
+
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +10,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
+
   title = 'dpi-frontend';
 }
