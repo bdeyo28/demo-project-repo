@@ -118,4 +118,10 @@ public class DailyPumpServices {
         exerciseDao.deleteExercisesFromWorkout(workoutID);
     }
 
+    public Exercise editExerciseByID(Exercise toEdit, Integer exerciseID) throws NullExerciseException,
+            NullWorkoutException, InvalidInputException
+    {
+        return exerciseDao.editExerciseByID(toEdit, exerciseID);
+    }
+
 }

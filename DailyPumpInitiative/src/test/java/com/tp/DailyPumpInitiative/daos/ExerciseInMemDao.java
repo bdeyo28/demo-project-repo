@@ -112,4 +112,9 @@ public class ExerciseInMemDao implements ExerciseDao {
 
     }
 
+    @Override
+    public Exercise editExerciseByID(Exercise toEdit, Integer exerciseID) {
+        return null;
+    }
+
 }

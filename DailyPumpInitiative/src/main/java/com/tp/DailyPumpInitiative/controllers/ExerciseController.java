@@ -78,6 +78,27 @@ public class ExerciseController {
         }
     }
 
+    @PutMapping("/editExercise/{exerciseID}")
+    public ResponseEntity editExerciseByID(@RequestBody Exercise toEdit,
+                                           @PathVariable Integer exerciseID)
+    {
+        Exercise toReturn = null;
+        try {
+            toReturn = service.editExerciseByID(toEdit, exerciseID);
+        } catch (NullWorkoutException ex)
+        {
+            ex.getMessage();
+        } catch (NullExerciseException ex)
+        {
+            ex.getMessage();
+        } catch (InvalidInputException ex)
+        {
+            ex.getMessage();
+        }
+
+        return ResponseEntity.ok(toReturn);
+    }
+
     @PostMapping("/addToWorkout/{workoutID}")
     public ResponseEntity addExerciseToWorkout(@RequestBody Exercise toAdd,
                                                @PathVariable Integer workoutID)

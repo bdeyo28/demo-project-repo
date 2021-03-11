@@ -20,4 +20,6 @@ public interface ExerciseDao {
 
     void deleteExercisesFromWorkout(Integer workoutID);
 
+    Exercise editExerciseByID(Exercise toEdit, Integer exerciseID);
+
 }

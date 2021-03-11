@@ -13,6 +13,7 @@ import { ExerciseService } from 'src/app/exercise.service';
   templateUrl: './editworkout.component.html',
   styleUrls: ['./editworkout.component.css']
 })
+
 export class EditworkoutComponent implements OnInit {
 
   nullID: number = 0;
@@ -83,6 +84,12 @@ export class EditworkoutComponent implements OnInit {
 
   addWorkout() {
 
+    if (this.name === undefined)
+    {
+      alert("Please add a Workout Name");
+      return;
+    }
+
     if (this.intensityID == null)
     {
       alert("Please choose a valid Intensity Level");
@@ -100,8 +107,6 @@ export class EditworkoutComponent implements OnInit {
     this.name = '';
     this.intensityID = null;
     this.desc = '';
-    // this.reloadPageOnClick();
-
   }
 
   addExercise() {
@@ -137,7 +142,6 @@ export class EditworkoutComponent implements OnInit {
   deleteExercisesFromWorkout() {
 
     this.wkService.deleteExercisesFromWorkout(this.deleteWorkoutID).subscribe((_) => this.router.navigate(["editworkout"]));
-
 
   }
 

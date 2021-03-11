@@ -117,4 +117,35 @@ public class ExercisePostgresDao implements ExerciseDao {
         template.execute("DELETE from \"Exercise\" where \"workoutID\" = "+workoutID+";");
     }
 
+    @Override
+    public Exercise editExerciseByID(Exercise toEdit, Integer exerciseID) {
+
+        Integer workoutID = template.queryForObject("UPDATE \"Exercise\"\n" +
+                "SET\n" +
+                "\"name\" = ?,\n" +
+                "\"description\" = ?,\n" +
+                "\"bodyweight\" = ?,\n" +
+                "\"reps\" = ?,\n" +
+                "\"completed\" = ?,\n" +
+                "\"sets\" = ?,\n" +
+                "\"weight\" = ?,\n" +
+                "\"url\" = ?\n" +
+                "WHERE \"exerciseID\" = "+exerciseID+"\n" +
+                "RETURNING *;", new IntegerMapper("workoutID"),
+                toEdit.getExerciseName(),
+                toEdit.getExerciseDesc(),
+                toEdit.isBodyweight(),
+                toEdit.getExerciseReps(),
+                toEdit.isComplete(),
+                toEdit.getExerciseSets(),
+                toEdit.getExerciseWeight(),
+                toEdit.getExerciseURL());
+
+        toEdit.setWorkoutID(workoutID);
+        toEdit.setExerciseID(exerciseID);
+
+        return toEdit;
+
+    }
+
 }
