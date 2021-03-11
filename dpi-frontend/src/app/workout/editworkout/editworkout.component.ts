@@ -117,7 +117,9 @@ export class EditworkoutComponent implements OnInit {
 
   deleteWorkout() {
 
-    if (this.deleteWorkoutID === undefined || this.deleteWorkoutID == this.nullID) {
+    if (this.deleteWorkoutID === undefined
+        || this.deleteWorkoutID == this.nullID
+        || this.deleteWorkoutID == null) {
       alert("Please select a valid workout to delete.");
       return;
 
@@ -127,6 +129,9 @@ export class EditworkoutComponent implements OnInit {
     this.wkService.getWorkoutByID(this.deleteWorkoutID).subscribe(workout => {
       document.getElementById("workoutDeleted").innerHTML += `Removed: ${workout.workoutName}` + "<br>";
     });
+
+    this.deleteWorkoutID = null;    
+
   }
 
   deleteExercisesFromWorkout() {
@@ -147,6 +152,9 @@ export class EditworkoutComponent implements OnInit {
     this.exService.getExerciseByID(this.deleteExerciseID).subscribe(exercise => {
       document.getElementById("exerciseDeleted").innerHTML += `Removed: ${exercise.exerciseName}` + "<br>";
     })
+
+    this.deleteExerciseID = null;
+
   }
 
   editExerciseByID() {

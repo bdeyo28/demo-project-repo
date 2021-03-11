@@ -89,7 +89,7 @@
         <h3>Select Workout</h3> <!-- TODO // SET UP A DROP DOWN FOR ALL ID'S AND CORRESPONDING NAMES-->
 
         <select [(ngModel)] = "deleteWorkoutID" style = "width: 500px">
-            <option value = "{{nullID}}"></option>
+            <option [ngValue] = "null"></option>
             <option value = "{{nullID}}">Light Intensity</option>
             <option *ngFor = "let workout of workoutList1" 
                 value = "{{workout.workoutID}}">Name : {{workout.workoutName}}</option>

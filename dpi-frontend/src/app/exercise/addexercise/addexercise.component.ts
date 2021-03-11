@@ -109,6 +109,7 @@ export class AddexerciseComponent implements OnInit {
     document.getElementById("exerciseAdded").innerHTML += `Added: ${toAdd.exerciseName}` + "<br>";
     this.name = '';
     this.sets = null;
+    this.description = '';
     this.reps = '';
     this.bodyweight = null;
     this.weight = '';
