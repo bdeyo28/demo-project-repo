@@ -1,15 +1,8 @@
 package com.tp.DailyPumpInitiative.services;
 
-import com.tp.DailyPumpInitiative.exceptions.InvalidInputException;
-import com.tp.DailyPumpInitiative.exceptions.NullExerciseException;
-import com.tp.DailyPumpInitiative.exceptions.NullIntensityException;
-import com.tp.DailyPumpInitiative.exceptions.NullWorkoutException;
-import com.tp.DailyPumpInitiative.models.Exercise;
-import com.tp.DailyPumpInitiative.models.Intensity;
-import com.tp.DailyPumpInitiative.models.Workout;
-import com.tp.DailyPumpInitiative.persistence.ExerciseDao;
-import com.tp.DailyPumpInitiative.persistence.IntensityDao;
-import com.tp.DailyPumpInitiative.persistence.WorkoutDao;
+import com.tp.DailyPumpInitiative.exceptions.*;
+import com.tp.DailyPumpInitiative.models.*;
+import com.tp.DailyPumpInitiative.persistence.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,6 +20,12 @@ public class DailyPumpServices {
 
     @Autowired
     IntensityDao intensityDao;
+
+    @Autowired
+    WarmUpDao warmUpDao;
+
+    @Autowired
+    CooldownDao cooldownDao;
 
 //    public Workout setWorkoutList(Integer intensityID)
 //    {
@@ -122,6 +121,20 @@ public class DailyPumpServices {
             NullWorkoutException, InvalidInputException
     {
         return exerciseDao.editExerciseByID(toEdit, exerciseID);
+    }
+
+    // WARM UPS
+
+    public List<WarmUp> getAllWarmUps() throws NullWarmUpException, InvalidInputException
+    {
+        return warmUpDao.getAllWarmUps();
+    }
+
+    // COOLDOWNS
+
+    public List<Cooldown> getAllCooldowns() throws NullCooldownException, InvalidInputException
+    {
+        return cooldownDao.getAllCooldowns();
     }
 
 }

@@ -24,6 +24,8 @@ import { MatIconModule } from '@angular/material/icon';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatMenuModule} from '@angular/material/menu'
 import {MatButtonModule} from '@angular/material/button';
+import { WarmupsComponent } from './warmups/warmups.component';
+import { CooldownsComponent } from './cooldowns/cooldowns.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import {MatButtonModule} from '@angular/material/button';
     EditworkoutComponent,
     AddexerciseComponent,
     EditexerciseComponent,
+    WarmupsComponent,
+    CooldownsComponent,
   ],
   imports: [
     BrowserModule,

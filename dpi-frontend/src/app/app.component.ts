@@ -1,6 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import {MatMenuModule, MatMenuTrigger, MatMenu} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav'
+
 
 
 

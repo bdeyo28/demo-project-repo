@@ -12,6 +12,8 @@ import { ExercisedetailsComponent } from './exercise/exercisedetails/exercisedet
 import { EditworkoutComponent } from './workout/editworkout/editworkout.component';
 import { AddexerciseComponent } from './exercise/addexercise/addexercise.component';
 import { EditexerciseComponent } from './exercise/editexercise/editexercise.component';
+import { WarmupsComponent } from './warmups/warmups.component';
+import { CooldownsComponent } from './cooldowns/cooldowns.component';
 
 const routes: Routes = [{path: "", component : HomepageComponent},
                         {path: "contact", component : ContactpageComponent},
@@ -21,7 +23,9 @@ const routes: Routes = [{path: "", component : HomepageComponent},
                         {path: "getExercise/:exerciseID", component : ExercisedetailsComponent},
                         {path: "editworkout", component: EditworkoutComponent},
                         {path: "addExercise/:workoutID", component: AddexerciseComponent},
-                        {path: "editExercise/:exerciseID", component: EditexerciseComponent}];
+                        {path: "editExercise/:exerciseID", component: EditexerciseComponent},
+                        {path: "warmUps", component : WarmupsComponent},
+                        {path: "cooldowns", component : CooldownsComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
