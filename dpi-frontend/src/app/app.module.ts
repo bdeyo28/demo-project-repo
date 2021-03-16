@@ -1,4 +1,4 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
+import { NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,7 +14,6 @@ import { ContactService } from './contact.service';
 import { IntensitylistComponent } from './intensity/intensitylist/intensitylist.component';
 import { ExerciselistComponent } from './exercise/exerciselist/exerciselist.component';
 import { WorkoutlistComponent } from './workout/workoutlist/workoutlist.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CarouselComponent } from './homepage/carousel/carousel.component';
 import { ExercisedetailsComponent } from './exercise/exercisedetails/exercisedetails.component';
 import { EditworkoutComponent } from './workout/editworkout/editworkout.component';
@@ -31,6 +30,8 @@ import { MotivationComponent } from './motivation/motivation.component';
 import { WarmuplistComponent } from './warmups/warmuplist/warmuplist.component';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { MatDrawerContainer, MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar'
+import { MatCardModule } from '@angular/material/card'
 
 @NgModule({
   declarations: [
@@ -52,7 +53,7 @@ import { MatDrawerContainer, MatSidenavModule } from '@angular/material/sidenav'
     CooldownsComponent,
     CooldownlistComponent,
     MotivationComponent,
-    WarmuplistComponent
+    WarmuplistComponent,
 
   ],
   imports: [
@@ -61,12 +62,12 @@ import { MatDrawerContainer, MatSidenavModule } from '@angular/material/sidenav'
     HttpClientModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    NgbModule,
-    MatIconModule,
-    MatMenuModule,
+    BrowserAnimationsModule,
     MatButtonModule,
     MatSidenavModule,
-    BrowserAnimationsModule
+    MatToolbarModule,
+    MatIconModule,
+    MatCardModule
     
   ],
   providers: [
