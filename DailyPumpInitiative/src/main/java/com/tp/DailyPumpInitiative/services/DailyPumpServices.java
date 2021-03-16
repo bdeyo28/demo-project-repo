@@ -87,6 +87,12 @@ public class DailyPumpServices {
         return exerciseDao.getAllExercises();
     }
 
+    public List<String> getAllExerciseURLS(Integer workoutID) throws NullExerciseException,
+            InvalidInputException
+    {
+        return exerciseDao.getAllExerciseURLS(workoutID);
+    }
+
     public Exercise getExerciseByID(Integer exerciseID) throws NullExerciseException,
             InvalidInputException
     {
@@ -135,6 +141,11 @@ public class DailyPumpServices {
     public List<Cooldown> getAllCooldowns() throws NullCooldownException, InvalidInputException
     {
         return cooldownDao.getAllCooldowns();
+    }
+
+    public List<String> getAllCooldownURLS() throws NullCooldownException, InvalidInputException
+    {
+        return cooldownDao.getAllCooldownURLS();
     }
 
 }

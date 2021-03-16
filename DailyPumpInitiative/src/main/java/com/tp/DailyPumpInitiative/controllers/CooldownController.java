@@ -27,4 +27,15 @@ public class CooldownController {
         }
     }
 
+    @GetMapping("/allCooldownURLS")
+    public ResponseEntity getAllCooldownURLS()
+    {
+        try {
+            return ResponseEntity.ok(service.getAllCooldownURLS());
+        } catch (NullCooldownException | InvalidInputException ex)
+        {
+            return ResponseEntity.badRequest().body(ex.getMessage());
+        }
+    }
+
 }

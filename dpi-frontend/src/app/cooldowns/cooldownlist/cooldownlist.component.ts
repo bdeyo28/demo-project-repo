@@ -16,7 +16,9 @@ export class CooldownlistComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.service.getAllCooldowns().subscribe(list => {this.cooldownList = list});
+    this.service.getAllCooldowns().subscribe(list => {this.cooldownList = list;
+      
+    });
 
   }
 

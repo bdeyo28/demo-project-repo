@@ -8,4 +8,6 @@ public interface CooldownDao {
 
     List<Cooldown> getAllCooldowns();
 
+    List<String> getAllCooldownURLS();
+
 }

@@ -22,4 +22,6 @@ public interface ExerciseDao {
 
     Exercise editExerciseByID(Exercise toEdit, Integer exerciseID);
 
+    List<String> getAllExerciseURLS(Integer workoutID);
+
 }

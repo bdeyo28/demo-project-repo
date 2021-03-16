@@ -14,7 +14,8 @@ export class ExerciselistComponent implements OnInit {
 
   exerciseList : Exercise[];
   workoutID : number;
-
+  imgSrc : any[];
+  
   constructor(private service : ExerciseService, private router : ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -23,6 +24,8 @@ export class ExerciselistComponent implements OnInit {
     this.workoutID = parseInt(idName);
 
     this.service.getExerciseList(this.workoutID).subscribe(list => {this.exerciseList = list});
+
+    
 
   }
 

@@ -17,7 +17,7 @@ public class CooldownMapper implements RowMapper<Cooldown> {
         toReturn.setCooldownID(resultSet.getInt("cooldownID"));
         toReturn.setCooldownName(resultSet.getString("cooldownName"));
         toReturn.setDesc(resultSet.getString("description"));
-        toReturn.setCooldownURL(resultSet.getString("cooldownURL"));
+        toReturn.setCooldownURL(resultSet.getString("url"));
 
         return toReturn;
 

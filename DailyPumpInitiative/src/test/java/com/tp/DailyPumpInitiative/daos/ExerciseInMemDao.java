@@ -119,4 +119,9 @@ public class ExerciseInMemDao implements ExerciseDao {
         return null;
     }
 
+    @Override
+    public List<String> getAllExerciseURLS(Integer workoutID) {
+        return null;
+    }
+
 }

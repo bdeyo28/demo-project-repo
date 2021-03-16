@@ -38,6 +38,17 @@ public class ExerciseController {
         }
     }
 
+    @GetMapping("/allExerciseURLS/{workoutID}")
+    public ResponseEntity getAllExerciseURLS(@PathVariable Integer workoutID)
+    {
+        try {
+            return ResponseEntity.ok(service.getAllExerciseURLS(workoutID));
+        } catch (NullExerciseException | InvalidInputException ex)
+        {
+            return ResponseEntity.badRequest().body(ex.getMessage());
+        }
+    }
+
     @GetMapping("/getExercise/{exerciseID}")
     public ResponseEntity getExerciseByID(@PathVariable Integer exerciseID)
     {

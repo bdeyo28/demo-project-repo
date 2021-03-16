@@ -30,5 +30,16 @@ export class CooldownService {
     );
   }
 
+  getAllCooldownURLS() : Observable<string[]> {
+    return this.http.get<string[]>(this.baseURL + "/allCooldownURLS")
+    .pipe(
+      tap(x => console.log(x)),
+      catchError(err => {
+        console.log(err);
+        return of(null);
+      })
+    );
+  }
+
 
 }

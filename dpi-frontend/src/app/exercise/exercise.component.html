@@ -12,7 +12,9 @@
                     <p>Reps: {{exercise.exerciseReps}}</p>
                     <p *ngIf = "!exercise.bodyweight">Suggest Weight: {{exercise.exerciseWeight}}</p>
                     <p *ngIf = "exercise.bodyweight">Bodyweight Exercise</p>
-                    <a [routerLink] = "['/getExercise/', exercise.exerciseID]" class="select1">View Video</a>
+                    <iframe width="560" height="315" [src] = "sanitizeURL" 
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+                    encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         </div>

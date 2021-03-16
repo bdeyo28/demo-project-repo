@@ -4,6 +4,7 @@ import com.tp.DailyPumpInitiative.models.Exercise;
 import com.tp.DailyPumpInitiative.persistence.mappers.BooleanMapper;
 import com.tp.DailyPumpInitiative.persistence.mappers.ExerciseMapper;
 import com.tp.DailyPumpInitiative.persistence.mappers.IntegerMapper;
+import com.tp.DailyPumpInitiative.persistence.mappers.URLMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -145,6 +146,21 @@ public class ExercisePostgresDao implements ExerciseDao {
         toEdit.setExerciseID(exerciseID);
 
         return toEdit;
+
+    }
+
+    @Override
+    public List<String> getAllExerciseURLS(Integer workoutID) {
+
+        List<String> exerciseURLS = template.query("SELECT \"url\" from " +
+                "\"Exercise\" WHERE \"workoutID\" = "+workoutID+";", new URLMapper("url"));
+
+
+        if (exerciseURLS.isEmpty())
+            return null;
+
+        return exerciseURLS;
+
 
     }
 

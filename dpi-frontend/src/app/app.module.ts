@@ -27,6 +27,8 @@ import {MatButtonModule} from '@angular/material/button';
 import { WarmupsComponent } from './warmups/warmups.component';
 import { CooldownsComponent } from './cooldowns/cooldowns.component';
 import { CooldownlistComponent } from './cooldowns/cooldownlist/cooldownlist.component';
+import { MotivationComponent } from './motivation/motivation.component';
+import { WarmuplistComponent } from './warmups/warmuplist/warmuplist.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { CooldownlistComponent } from './cooldowns/cooldownlist/cooldownlist.com
     WarmupsComponent,
     CooldownsComponent,
     CooldownlistComponent,
+    MotivationComponent,
+    WarmuplistComponent,
   ],
   imports: [
     BrowserModule,
