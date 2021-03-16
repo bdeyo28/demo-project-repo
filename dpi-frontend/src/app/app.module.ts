@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -29,6 +29,8 @@ import { CooldownsComponent } from './cooldowns/cooldowns.component';
 import { CooldownlistComponent } from './cooldowns/cooldownlist/cooldownlist.component';
 import { MotivationComponent } from './motivation/motivation.component';
 import { WarmuplistComponent } from './warmups/warmuplist/warmuplist.component';
+import { MediaMatcher } from '@angular/cdk/layout';
+import { MatDrawerContainer, MatSidenavModule } from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,8 @@ import { WarmuplistComponent } from './warmups/warmuplist/warmuplist.component';
     CooldownsComponent,
     CooldownlistComponent,
     MotivationComponent,
-    WarmuplistComponent,
+    WarmuplistComponent
+
   ],
   imports: [
     BrowserModule,
@@ -62,10 +65,13 @@ import { WarmuplistComponent } from './warmups/warmuplist/warmuplist.component';
     MatIconModule,
     MatMenuModule,
     MatButtonModule,
+    MatSidenavModule,
     BrowserAnimationsModule
+    
   ],
   providers: [
-    ContactService
+    ContactService,
+    MediaMatcher
   ],
   bootstrap: [AppComponent]
 })

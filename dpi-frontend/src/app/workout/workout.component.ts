@@ -1,4 +1,4 @@
-import { Input } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { Workout } from '../Workout';
 import { Exercise } from '../Exercise';

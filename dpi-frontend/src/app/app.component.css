@@ -1,0 +1,8 @@
+.header {
+    background: black;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border: 5px solid dimgray;
+    color: whitesmoke;
+    text-align: center;
+}
