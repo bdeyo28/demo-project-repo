@@ -10,10 +10,15 @@ import { CooldownService } from '../cooldown.service';
 export class CooldownsComponent implements OnInit {
 
   @Input()cooldown : Cooldown;
-
+  
   constructor(private service : CooldownService) { }
 
   ngOnInit(): void {
+
+
+
+
+
   }
 
 }

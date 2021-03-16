@@ -26,6 +26,7 @@ import {MatMenuModule} from '@angular/material/menu'
 import {MatButtonModule} from '@angular/material/button';
 import { WarmupsComponent } from './warmups/warmups.component';
 import { CooldownsComponent } from './cooldowns/cooldowns.component';
+import { CooldownlistComponent } from './cooldowns/cooldownlist/cooldownlist.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { CooldownsComponent } from './cooldowns/cooldowns.component';
     EditexerciseComponent,
     WarmupsComponent,
     CooldownsComponent,
+    CooldownlistComponent,
   ],
   imports: [
     BrowserModule,

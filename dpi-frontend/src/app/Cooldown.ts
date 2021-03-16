@@ -3,7 +3,7 @@ export interface Cooldown {
 
     cooldownName : string;
     cooldownID : number;
-    description : string;
+    desc : string;
     cooldownURL : string; 
 
 
