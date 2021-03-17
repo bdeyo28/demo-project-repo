@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-motivation',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MotivationComponent implements OnInit {
 
-  constructor() { }
+  imgSrc : SafeResourceUrl;
+
+  constructor(private sanitizer : DomSanitizer) { }
 
   ngOnInit(): void {
+
+    this.imgSrc = this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/Z63w5PefxTQ");
+
   }
 
 }
