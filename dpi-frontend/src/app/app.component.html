@@ -1,36 +1,38 @@
-<mat-drawer-container>
-	<mat-drawer #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [opened]="!mobileQuery.matches" [ngClass]="{'sidenav-collapsed': collapsedNav && !mobileQuery.matches}">
-		<div class="sidenav-header">
-			<span>{{collapsedNav && !mobileQuery.matches ? 'S' : 'SideNav'}}</span>
-		</div>
-		<ul>
-			<li>
-				<mat-icon>home</mat-icon>
-			</li>
-			<li>
-				<mat-icon>exit_to_app</mat-icon>
-			</li>
-		</ul>
-	</mat-drawer>
-	<mat-drawer-content [ngClass]="{'sidenav-collapsed': collapsedNav && !mobileQuery.matches}">
-		<mat-toolbar>
-			<!-- <button mat-icon-button (click)="snav.toggle()"> -->
-			<button mat-icon-button (click)="mobileQuery.matches ? snav.toggle() : collapsedNav = !collapsedNav">
-        <mat-icon>menu</mat-icon>
-      </button>
-		</mat-toolbar>
-		<mat-card>
-			<mat-card-header>
-				<mat-card-title>Home</mat-card-title>
-				<mat-card-subtitle>Example of a home screen</mat-card-subtitle>
-			</mat-card-header>
-			<mat-card-content>
+<div class = "menu">
+    <button mat-button [matMenuTriggerFor]="menu" 
+        class="menuButton">&#9776; Dropdown Menu</button>
+    <mat-menu #menu="matMenu" class="menuClass">
+        <button mat-menu-item [routerLink] = "['']">Home Page</button>
+        <button mat-menu-item [routerLink] = "['contact']">Contact Page</button>
+        <button mat-menu-item [routerLink] = "['editworkout']">Edit Exercises & Workouts</button>
+        <button mat-menu-item [matMenuTriggerFor]="intensitys">Select Workout</button>
+        <button mat-menu-item [routerLink] = "['warmUps']">Dynamic Warm Ups</button>
+        <button mat-menu-item [routerLink] = "['cooldowns']">Cooldown Exercises</button>
+        <button mat-menu-item [routerLink] = "['']">Get Motivated</button>
+    </mat-menu>
 
-			</mat-card-content>
-			<mat-card-actions>
-				<button mat-button>Ok</button>
-			</mat-card-actions>
-		</mat-card>
-	</mat-drawer-content>
-</mat-drawer-container>
+    <mat-menu #intensitys="matMenu" class="menuClass">
+        <button mat-menu-item [matMenuTriggerFor]="light">Light Intensity</button>
+        <button mat-menu-item [matMenuTriggerFor]="moderate">Moderate Intensity</button>
+        <button mat-menu-item [matMenuTriggerFor]="heavy">Heavy Intensity</button>
+    </mat-menu>
+
+    <mat-menu #light="matMenu">
+        <button mat-menu-item 
+                *ngFor = "let i of workoutList1"
+                [routerLink] = "['/exercises/', i.workoutID]">{{i.workoutName}}</button>
+    </mat-menu>
+
+    <mat-menu #moderate="matMenu">
+        <button mat-menu-item 
+                *ngFor = "let i of workoutList2"
+                [routerLink] = "['/exercises/', i.workoutID]">{{i.workoutName}}</button>
+    </mat-menu>
+
+    <mat-menu #heavy="matMenu">
+        <button mat-menu-item 
+        *ngFor = "let i of workoutList3"
+        [routerLink] = "['/exercises/', i.workoutID]">{{i.workoutName}}</button>
+    </mat-menu>
+</div>
 <router-outlet></router-outlet>

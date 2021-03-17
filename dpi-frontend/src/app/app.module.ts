@@ -1,6 +1,5 @@
 import { NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WorkoutComponent } from './workout/workout.component';
@@ -32,6 +31,7 @@ import { MediaMatcher } from '@angular/cdk/layout';
 import { MatDrawerContainer, MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatCardModule } from '@angular/material/card'
+
 
 @NgModule({
   declarations: [
@@ -67,7 +67,8 @@ import { MatCardModule } from '@angular/material/card'
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatMenuModule
     
   ],
   providers: [

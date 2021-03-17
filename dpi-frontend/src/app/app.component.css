@@ -1,8 +1,23 @@
-.header {
-    background: black;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    border: 5px solid dimgray;
+.menu {
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+button.mat-focus-indicator.mat-menu-item {
     color: whitesmoke;
-    text-align: center;
+}
+
+.mat-menu-item {
+    background: black;
+    background-size: cover;
+    color: whitesmoke;
+}
+
+.mat-menu-item-submenu-trigger::after {
+    color: whitesmoke;
+}
+
+.menuButton {
+    color: whitesmoke;
+    font-size: large;
 }

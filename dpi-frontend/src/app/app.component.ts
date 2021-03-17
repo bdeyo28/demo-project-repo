@@ -5,6 +5,10 @@ import { MatSidenavModule } from '@angular/material/sidenav'
 import { MediaMatcher } from '@angular/cdk/layout';
 import { HttpClient } from '@angular/common/http';
 import { Input } from '@angular/core';
+import { ExerciseService } from './exercise.service';
+import { WorkoutService } from './workout.service';
+import { Exercise } from './Exercise';
+import { Workout } from './Workout';
 
 
 
@@ -16,19 +20,24 @@ import { Input } from '@angular/core';
 })
 export class AppComponent {
 
-  collapsedNav: boolean;
-  mobileQuery: MediaQueryList;
+  exerciseList : Exercise[];
+  workoutList1 : Workout[];
+  workoutList2 : Workout[];
+  workoutList3 : Workout[];
 
-  private _mobileQueryListener: () => void;
+  constructor(private exService : ExerciseService,
+              private wkService : WorkoutService) {
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
-    this.mobileQuery = media.matchMedia('(max-width: 600px)');
-    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
-    this.mobileQuery.addListener(this._mobileQueryListener);
   }
 
-  ngOnDestroy(): void {
-    this.mobileQuery.removeListener(this._mobileQueryListener);
+  ngOnInit() : void {
+
+     this.wkService.getWorkoutList(1).subscribe(list1 => {this.workoutList1 = list1});
+
+     this.wkService.getWorkoutList(2).subscribe(list2 => {this.workoutList2 = list2});
+
+     this.wkService.getWorkoutList(3).subscribe(list3 => {this.workoutList3 = list3});
+
   }
 
 }
