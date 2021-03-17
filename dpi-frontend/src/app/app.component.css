@@ -3,10 +3,6 @@
     padding-bottom: 15px;
 }
 
-button.mat-focus-indicator.mat-menu-item {
-    color: whitesmoke;
-}
-
 .mat-menu-item {
     background: black;
     background-size: cover;

@@ -28,7 +28,7 @@
 .container .card {
     position: relative;
     min-width: 600px;
-    height: 600px;
+    height: 700px;
     box-shadow: inset 5px 5px 5px rgba(0,0,0,0.2),
                 inset -5px -5px 15px rgba(255,255,255,0.1),
                 5px 5px 15px rgba(0,0,0,0.3),
@@ -82,9 +82,9 @@
     bottom: 20px;
     background: linear-gradient(to right bottom, gray, black, darkslategray, black, gray);
     background-position: center right;
-    -moz-opacity: .8;
-    -khtml-opacity: .8;
-    opacity: .8;
+    -moz-opacity: .9;
+    -khtml-opacity: .9;
+    opacity: .9;
     border: 2px solid #1e1f23;
     box-shadow: 0 20px 50px rgba(0,0,0,0.5);
     transition: 0.5s;
