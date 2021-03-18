@@ -17,6 +17,17 @@ export class ExerciseService {
 
   constructor(private http : HttpClient) { }
 
+  editExerciseByID(toEdit : Exercise, id : number) : Observable<Exercise> {
+    return this.http.put<Exercise>(this.baseURL + "/editExercise/" + id, toEdit, this.httpOptions)
+    .pipe(
+      tap(x => console.log(x)),
+      catchError(err => {
+        console.log(err);
+        return of(null);
+      })
+    );
+  }
+
   getAllExercises() : Observable<Exercise[]> {
     return this.http.get<Exercise[]>(this.baseURL + "/allExercises")
     .pipe(
@@ -30,17 +41,6 @@ export class ExerciseService {
 
   getAllExerciseURLS(id : number) : Observable<String[]>{
     return this.http.get<String[]>(this.baseURL + "/allExerciseURLS/" + id)
-    .pipe(
-      tap(x => console.log(x)),
-      catchError(err => {
-        console.log(err);
-        return of(null);
-      })
-    );
-  }
-
-  editExerciseByID(toEdit : Exercise, id : number) : Observable<Exercise> {
-    return this.http.put<Exercise>(this.baseURL + "/editExercise/" + id, toEdit, this.httpOptions)
     .pipe(
       tap(x => console.log(x)),
       catchError(err => {
