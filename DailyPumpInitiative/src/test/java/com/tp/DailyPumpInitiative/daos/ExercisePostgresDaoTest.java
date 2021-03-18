@@ -23,7 +23,7 @@ import java.util.List;
 public class ExercisePostgresDaoTest {
 
     @Autowired
-    ExercisePostgresDao toTest;
+    ExercisePostgresDao exTest;
 
     @Autowired
     WorkoutPostgresDao wkTest;
@@ -58,7 +58,8 @@ public class ExercisePostgresDaoTest {
                 "('3', 'Heavy 3', 'Desc3', 'false');");
 
         // insert exercise table
-        template.update("INSERT INTO \"Exercise\" (\"workoutID\", \"exerciseID\", \"name\", \"description\", \"bodyweight\", \"weight\", \"reps\", \"completed\", \"sets\")\n" +
+        template.update("INSERT INTO \"Exercise\" (\"workoutID\", \"exerciseID\", \"name\", " +
+                "\"description\", " + "\"bodyweight\", \"weight\", \"reps\", \"completed\", \"sets\")\n" +
                 "VALUES ('3', '1', 'Front Squat', 'Desc1', 'false', '150', 'Till Failure', 'false', '6'),\n" +
                 "\t\t('3', '2', 'Back Squat', 'Desc2', 'false', '160', '5 - 8', 'true', '3'),\n" +
                 "\t\t('3', '3', 'Lunges', 'Desc3', 'false', '80', '25', 'false', '5');");
@@ -87,11 +88,24 @@ public class ExercisePostgresDaoTest {
         newExercise = template.query("SELECT * FROM \"Exercise\" WHERE (\"exerciseID\" = '"+ 1 +"');",
                 new ExerciseMapper() ).get(0);
 
-        assertEquals(newExercise.getExerciseID(), toTest.getExerciseByID(1).getExerciseID());
+        assertEquals(newExercise.getExerciseID(), exTest.getExerciseByID(1).getExerciseID());
+        assertEquals(newExercise.getExerciseDesc(), exTest.getExerciseByID(1).getExerciseDesc());
+        assertEquals(newExercise.getWorkoutID(), exTest.getExerciseByID(1).getWorkoutID());
+        assertEquals(newExercise.getExerciseName(), exTest.getExerciseByID(1).getExerciseName());
+        assertEquals(newExercise.getExerciseReps(), exTest.getExerciseByID(1).getExerciseReps());
+        assertEquals(newExercise.getExerciseWeight(), exTest.getExerciseByID(1).getExerciseWeight());
+        assertEquals(newExercise.getExerciseSets(), exTest.getExerciseByID(1).getExerciseSets());
 
-//        assertEquals(1, newList.get(0).getExerciseID());
-//        assertEquals(2, newList.get(1).getExerciseID());
-//        assertEquals(3, newList.get(2).getExerciseID());
+        newExercise = template.query("SELECT * FROM \"Exercise\" WHERE (\"exerciseID\" = '"+ 2 +"');",
+                new ExerciseMapper() ).get(0);
+
+        assertEquals(newExercise.getExerciseID(), exTest.getExerciseByID(2).getExerciseID());
+        assertEquals(newExercise.getExerciseDesc(), exTest.getExerciseByID(2).getExerciseDesc());
+        assertEquals(newExercise.getWorkoutID(), exTest.getExerciseByID(2).getWorkoutID());
+        assertEquals(newExercise.getExerciseName(), exTest.getExerciseByID(2).getExerciseName());
+        assertEquals(newExercise.getExerciseReps(), exTest.getExerciseByID(2).getExerciseReps());
+        assertEquals(newExercise.getExerciseWeight(), exTest.getExerciseByID(2).getExerciseWeight());
+        assertEquals(newExercise.getExerciseSets(), exTest.getExerciseByID(2).getExerciseSets());
 
     }
 
@@ -99,9 +113,9 @@ public class ExercisePostgresDaoTest {
     public void getIsExerciseCompletedByExerciseIDGoldenPath()
     {
 
-        assertFalse(toTest.isCompleted(3));
-        assertTrue(toTest.isCompleted(2));
-        assertFalse(toTest.isCompleted(1));
+        assertFalse(exTest.isCompleted(3));
+        assertTrue(exTest.isCompleted(2));
+        assertFalse(exTest.isCompleted(1));
 
 //        assertFalse(newList.get(0).isComplete());
 //        assertTrue(newList.get(1).isComplete());
@@ -111,11 +125,12 @@ public class ExercisePostgresDaoTest {
     @Test
     public void deleteExerciseByIDGoldenPath()
     {
-//        toTest.deleteExerciseByID(2);
+
+//        template.execute("DELETE from \"Exercise\" where \"exerciseID\" = 1;");
 //
-//        List thisList = wkTest.getExerciseList(3);
-//
-//        assertEquals(2, wkTest.getExerciseList(3).size());
+//        assertEquals(2, newList.size());
+
+
     }
 
 }

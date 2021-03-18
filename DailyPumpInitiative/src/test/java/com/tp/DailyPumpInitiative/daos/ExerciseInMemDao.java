@@ -89,39 +89,145 @@ public class ExerciseInMemDao implements ExerciseDao {
 
     @Override
     public void deleteExerciseByID(Integer exerciseID) {
+        initializeVariables();
 
-
+        for (int i = 0; i < exerciseList.size(); i++)
+        {
+            if (exerciseList.get(i).getExerciseID() == exerciseID)
+            {
+                exerciseList.remove(exerciseList.get(i));
+            }
+        }
 
     }
 
     @Override
     public Exercise addExerciseToList(Exercise toAdd) {
-        return null;
-    }
+        initializeVariables();
+        Exercise toReturn = toAdd;
 
+        toReturn.getExerciseURL();
+        toReturn.getWorkoutID();
+        toReturn.getExerciseName();
+        toReturn.getExerciseSets();
+        toReturn.getExerciseWeight();
+        toReturn.isBodyweight();
+        toReturn.isComplete();
+        toReturn.getExerciseDesc();
+        toReturn.getExerciseReps();
+        toReturn.getWorkoutID();
+        toReturn.getExerciseID();
+
+        exerciseList.add(toReturn);
+
+        return toReturn;
+    }
     @Override
     public List<Exercise> getAllExercises() {
-        return null;
+        initializeVariables();
+        List<Exercise> toReturn = new ArrayList<>();
+
+        for (int i = 0; i <  exerciseList.size(); i++)
+        {
+            toReturn.add(exerciseList.get(i));
+        }
+
+        return toReturn;
     }
 
     @Override
     public Exercise addExerciseToWorkout(Exercise toAdd, Integer workoutID) {
-        return null;
+        initializeVariables();
+
+        Exercise toReturn = toAdd;
+
+        toReturn.getExerciseURL();
+        toReturn.getWorkoutID();
+        toReturn.getExerciseName();
+        toReturn.getExerciseSets();
+        toReturn.getExerciseWeight();
+        toReturn.isBodyweight();
+        toReturn.isComplete();
+        toReturn.getExerciseDesc();
+        toReturn.getExerciseReps();
+        toReturn.getWorkoutID();
+        toReturn.getExerciseID();
+
+        for (int i = 0; i < workoutList.size(); i++)
+        {
+            if (workoutID == workoutList.get(i).getWorkoutID())
+            {
+                exerciseList.add(toReturn);
+            }
+        }
+
+        return toReturn;
+
     }
 
     @Override
     public void deleteExercisesFromWorkout(Integer workoutID) {
+        initializeVariables();
+
+        List<Exercise> toDelete = new ArrayList<>();
+
+        for (int i = 0; i < exerciseList.size(); i++)
+        {
+            if (workoutID == exerciseList.get(i).getWorkoutID())
+            {
+                toDelete.add(exerciseList.get(i));
+            }
+        }
+
+        for (int i = 0; i < workoutList.size(); i++)
+        {
+            if (workoutID == workoutList.get(i).getWorkoutID())
+            {
+                workoutList.remove(toDelete);
+            }
+        }
 
     }
 
     @Override
     public Exercise editExerciseByID(Exercise toEdit, Integer exerciseID) {
-        return null;
+
+        initializeVariables();
+
+        for (int i = 0; i < exerciseList.size(); i++)
+        {
+            if (exerciseList.get(i).getExerciseID() == exerciseID)
+            {
+                exerciseList.get(i).setExerciseID(toEdit.getExerciseID());
+                exerciseList.get(i).setExerciseDesc(toEdit.getExerciseDesc());
+                exerciseList.get(i).setExerciseReps(toEdit.getExerciseReps());
+                exerciseList.get(i).setExerciseURL(toEdit.getExerciseURL());
+                exerciseList.get(i).setExerciseSets(toEdit.getExerciseSets());
+                exerciseList.get(i).setWorkoutID(toEdit.getWorkoutID());
+                exerciseList.get(i).setExerciseName(toEdit.getExerciseName());
+                exerciseList.get(i).setComplete(toEdit.isComplete());
+                exerciseList.get(i).setBodyweight(toEdit.isBodyweight());
+            }
+        }
+
+        return toEdit;
     }
 
     @Override
     public List<String> getAllExerciseURLS(Integer workoutID) {
-        return null;
+        initializeVariables();
+
+        List<String> toReturn = new ArrayList<>();
+
+        for (int i = 0; i < exerciseList.size(); i++)
+        {
+            if (exerciseList.get(i).getWorkoutID() == workoutID)
+            {
+                toReturn.add(exerciseList.get(i).getExerciseURL());
+            }
+        }
+
+        return toReturn;
     }
 
 }
